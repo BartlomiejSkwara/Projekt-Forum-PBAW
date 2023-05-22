@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-21 17:43:55
+/* Smarty version 4.3.0, created on 2023-05-22 14:15:01
   from 'E:\XAMPP\htdocs\projekt\app\views\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_646a3c3b1f9cc0_46259414',
+  'unifunc' => 'content_646b5cc5ba5a11_86155707',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd356c445b05eac840ef968ba1c5e9707f2dc3f24' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\header.tpl',
-      1 => 1684683829,
+      1 => 1684757698,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_646a3c3b1f9cc0_46259414 (Smarty_Internal_Template $_smarty_tpl) {
-?><nav class="navbar navbar-expand-lg fixed-top bg-dark-subtle">
+function content_646b5cc5ba5a11_86155707 (Smarty_Internal_Template $_smarty_tpl) {
+?><nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom" style="border-bottom: 2px var(--bs-border-style) var(--bs-border-color)!important">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
         <img src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
-/resources/yuumbread.svg" width="78" height="44" class="me-3" alt="">
+/resources/yuumbread.svg" class="image-flip" width="59" height="33" class="me-3" alt="">
         Forum
     </a>
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

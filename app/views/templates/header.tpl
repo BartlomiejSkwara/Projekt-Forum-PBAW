@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-dark-subtle">
+<nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom" style="border-bottom: 2px var(--bs-border-style) var(--bs-border-color)!important">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-        <img src="{url}/resources/yuumbread.svg" width="78" height="44" class="me-3" alt="">
+        <img src="{url}/resources/yuumbread.svg" class="image-flip" width="59" height="33" class="me-3" alt="">
         Forum
     </a>
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
