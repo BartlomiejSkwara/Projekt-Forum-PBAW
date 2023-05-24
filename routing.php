@@ -14,6 +14,12 @@ Utils::addRoute('signup', 'LoginCtrl');
 
 Utils::addRoute('home', 'HomeCtrl');
 Utils::addRoute('fatalError', 'FatalError');
+
+
+
+Utils::addRoute('deleteCategory', 'CategoryCUD');
+Utils::addRoute('editCategory', 'CategoryCUD');
+Utils::addRoute('addCategory', 'CategoryCUD');
 //Utils::addRoute('thread', 'threadCtrl');
 //Utils::addRoute('thread', 'threadCtrl');
 

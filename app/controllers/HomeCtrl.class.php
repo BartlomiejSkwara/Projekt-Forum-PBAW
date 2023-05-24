@@ -20,9 +20,12 @@ class HomeCtrl {
     
     public $categories;
     
+    public function __construct() {
+        $this->categories = array();
+    }
     private function getDataFromDB(){
         try {
-            $categories = App::getDB()->select("category", ["name","description"]);
+            $this->categories = App::getDB()->select("category", ["idcategory","name","description"]);
         } 
         catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
@@ -37,6 +40,7 @@ class HomeCtrl {
     }
     public function action_home(){
         $this->getDataFromDB();
+        App::getSmarty()->assign("categories", $this->categories);
         App::getSmarty()->display("Home.tpl");
         
 

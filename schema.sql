@@ -29,17 +29,7 @@ CREATE TABLE IF NOT EXISTS `forum`.`user` (
   PRIMARY KEY (`iduser`))
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- -----------------------------------------------------
--- Table `forum`.`category`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `forum`.`category` ;
 
-CREATE TABLE IF NOT EXISTS `forum`.`category` (
-  `idcategory` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `description` VARCHAR(90) NOT NULL,
-  PRIMARY KEY (`idcategory`))
-ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- -----------------------------------------------------
 -- Table `forum`.`thread`
@@ -51,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `forum`.`thread` (
   `topic` VARCHAR(45) NOT NULL,
   `creation_date` DATETIME NOT NULL,
   `update_date` DATETIME NOT NULL,
-  `category_id` INT NOT NULL,
+  `category_id` VARCHAR(45) NOT NULL,
   `message_count` INT NOT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`idthread`),
@@ -68,6 +58,23 @@ CREATE TABLE IF NOT EXISTS `forum`.`thread` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+
+
+-- -----------------------------------------------------
+-- Table `forum`.`category`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `forum`.`category` ;
+
+CREATE TABLE IF NOT EXISTS `forum`.`category` (
+  `idcategory` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(90) NOT NULL,
+  PRIMARY KEY (`idcategory`))
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;  DROP TABLE IF EXISTS `forum`.`thread` ;
+
+
 
 -- -----------------------------------------------------
 -- Table `forum`.`message`

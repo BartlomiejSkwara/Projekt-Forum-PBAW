@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-24 11:40:42
+/* Smarty version 4.3.0, created on 2023-05-24 18:25:21
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_646ddb9a5a6e86_11503229',
+  'unifunc' => 'content_646e3a713e3377_74120238',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1684921239,
+      1 => 1684945520,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_646ddb9a5a6e86_11503229 (Smarty_Internal_Template $_smarty_tpl) {
+function content_646e3a713e3377_74120238 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1200765971646ddb9a59cc06_91440704', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_961629806646e3a713b9710_43977222', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_1200765971646ddb9a59cc06_91440704 extends Smarty_Internal_Block
+class Block_961629806646e3a713b9710_43977222 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_1200765971646ddb9a59cc06_91440704',
+    0 => 'Block_961629806646e3a713b9710_43977222',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -73,36 +73,72 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         
                 <div class= "text-center mx-auto mt-auto dark ">
             <div class ="d-flex flex-wrap justify-content-center container">
+            
+
+                
             <?php
-$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 10+1 - (0) : 0-(10)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
-if ($_smarty_tpl->tpl_vars['i']->total > 0) {
-for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
-$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-                    
-               
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'cat');
+$_smarty_tpl->tpl_vars['cat']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['cat']->value) {
+$_smarty_tpl->tpl_vars['cat']->do_else = false;
+?>
+                                   
 
                 
                 
-                <div class="card bg-dark-subtle m-2 " style="width: 18rem;">
+                <div class="card bg-dark-subtle m-2 " style="width: 18rem; height: 18rem;">
                     
-                                                         
-                    <a href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'home'),$_smarty_tpl ) );?>
+                                      <?php if (\core\RoleUtils::inRole("admin")) {?>
+                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'editCategory'),$_smarty_tpl ) );?>
+/<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
+">
+                            <span class="position-absolute top-0 start-85 translate-middle p-2 bg-primary rounded-circle border-primary-subtle btn">
+                                <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+/resources/icons/wrench.svg" alt="" width="16" height="16" style="fill: red;"> 
+                                <span class="visually-hidden">Edit Category</span>
+                            </span>
+                        </a>
+                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'deleteCategory'),$_smarty_tpl ) );?>
+/<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
+">
+                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn">
+                              <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+/resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
+                              <span class="visually-hidden">Remove Category</span>
+                            </span>
+                        </a>
+                    <?php }?>
+                    
+                    <a href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'category'),$_smarty_tpl ) );?>
+/<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
 " class=" stretched-link ">
                      <img src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumbread.svg" class="card-img-top border-bottom" alt="...">
                     </a>
                     <div class="card-body bg-dark-subtle">
-                      <h5 class="card-title ">Kategoria</h5>
-                      <p class="card-text ">Dana kategoria jest poświęcona bla bla bla.</p>
+                      <h5 class="card-title "><?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
+</h5>
+                      <p class="card-text "><?php echo $_smarty_tpl->tpl_vars['cat']->value["description"];?>
+</p>
                       
                     </div>
                     
-                                    </div>
 
-            <?php }
+                </div>
+
+            <?php
 }
-?>
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             
+            <?php if (\core\RoleUtils::inRole("admin")) {?>
+                <a href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'addCategory'),$_smarty_tpl ) );?>
+"   > 
+                    <div class="card bg-dark-subtle m-2 border-dots" style="width: 18rem; height: 18rem;"> 
+                        <img class="w-75 m-auto custom-icon"  src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+/resources/icons/plus.svg" alt=""  >              
+                    </div>
+                </a>
+            <?php }?>
             
             
            

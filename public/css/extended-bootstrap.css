@@ -33,7 +33,9 @@
 
 }
 
-
+.border-dots{
+    border-style: dashed;
+}
 
 .btn-outline-susgare{
     --bs-btn-color: #dc3545;
