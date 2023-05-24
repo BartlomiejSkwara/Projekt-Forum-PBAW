@@ -105,6 +105,7 @@ class Router {
             $header = "Location";
         }
         header($header .": " . $this->config->action_url . $action_name);
+       
         exit;
     }
 

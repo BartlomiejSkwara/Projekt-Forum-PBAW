@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-22 14:15:01
+/* Smarty version 4.3.0, created on 2023-05-22 17:52:10
   from 'E:\XAMPP\htdocs\projekt\app\views\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_646b5cc5ba5a11_86155707',
+  'unifunc' => 'content_646b8faa301c54_87767586',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd356c445b05eac840ef968ba1c5e9707f2dc3f24' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\header.tpl',
-      1 => 1684757698,
+      1 => 1684770703,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_646b5cc5ba5a11_86155707 (Smarty_Internal_Template $_smarty_tpl) {
+function content_646b8faa301c54_87767586 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom" style="border-bottom: 2px var(--bs-border-style) var(--bs-border-color)!important">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">

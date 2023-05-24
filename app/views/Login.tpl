@@ -1,11 +1,12 @@
 {extends file="templates\blankMain.tpl"}
 {block name = "main"}
+{assign var="title" value="Login"}
 
     <div class = "d-flex w-100 h-100 p-3 mx-auto flex-column">
 
         <div class= "text-center mx-auto mt-auto dark ">
           <form action="{url action='loginValidate'}" method="post" >
-            <img class="mb-4" src="{url}/resources/yuumbread.svg" alt="" width="156" height="88">
+            <img class="mb-4 img-fluid" src="{url}/resources/yuumbread.svg" alt="" width="156" height="88">
             <h1 class="h3 mb-3 fw-normal">Logowanie</h1>
 
             <div class="form-floating">

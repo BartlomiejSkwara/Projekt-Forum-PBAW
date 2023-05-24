@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-24 09:39:58
-  from 'E:\XAMPP\htdocs\projekt\app\views\Categories.tpl' */
+/* Smarty version 4.3.0, created on 2023-05-24 11:40:42
+  from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_646dbf4e5e4e13_39976187',
+  'unifunc' => 'content_646ddb9a5a6e86_11503229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '7e1c70d8fb5e3e2fb02981d3167e96a8221d38ab' => 
+    '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
-      0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Categories.tpl',
-      1 => 1684913987,
+      0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
+      1 => 1684921239,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_646dbf4e5e4e13_39976187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_646ddb9a5a6e86_11503229 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1648489961646dbf4e5db174_69869261', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1200765971646ddb9a59cc06_91440704', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_1648489961646dbf4e5db174_69869261 extends Smarty_Internal_Block
+class Block_1200765971646ddb9a59cc06_91440704 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_1648489961646dbf4e5db174_69869261',
+    0 => 'Block_1200765971646ddb9a59cc06_91440704',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -86,14 +86,15 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
                 <div class="card bg-dark-subtle m-2 " style="width: 18rem;">
                     
                                                          
-                    <a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width" class=" stretched-link ">
+                    <a href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'home'),$_smarty_tpl ) );?>
+" class=" stretched-link ">
                      <img src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumbread.svg" class="card-img-top border-bottom" alt="...">
                     </a>
                     <div class="card-body bg-dark-subtle">
                       <h5 class="card-title ">Kategoria</h5>
                       <p class="card-text ">Dana kategoria jest poświęcona bla bla bla.</p>
-                      <a  href = "https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width" class="btn btn-primary stretched-link visually-hidden-focusable">d</a>
+                      
                     </div>
                     
                                     </div>

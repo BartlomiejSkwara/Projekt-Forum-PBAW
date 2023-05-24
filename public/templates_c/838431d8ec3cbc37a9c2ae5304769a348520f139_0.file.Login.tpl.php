@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-22 09:55:00
+/* Smarty version 4.3.0, created on 2023-05-24 11:11:59
   from 'E:\XAMPP\htdocs\projekt\app\views\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_646b1fd43e41f2_76879789',
+  'unifunc' => 'content_646dd4df3d2c03_00691900',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '838431d8ec3cbc37a9c2ae5304769a348520f139' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Login.tpl',
-      1 => 1684742099,
+      1 => 1684919506,
       2 => 'file',
     ),
   ),
@@ -21,36 +21,37 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_646b1fd43e41f2_76879789 (Smarty_Internal_Template $_smarty_tpl) {
+function content_646dd4df3d2c03_00691900 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1540915371646b1fd43d9a30_55538264', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_274463584646dd4df399677_50546981', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\blankMain.tpl");
 }
 /* {block "main"} */
-class Block_1540915371646b1fd43d9a30_55538264 extends Smarty_Internal_Block
+class Block_274463584646dd4df399677_50546981 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_1540915371646b1fd43d9a30_55538264',
+    0 => 'Block_274463584646dd4df399677_50546981',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+<?php $_smarty_tpl->_assignInScope('title', "Login");?>
 
     <div class = "d-flex w-100 h-100 p-3 mx-auto flex-column">
 
         <div class= "text-center mx-auto mt-auto dark ">
           <form action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'loginValidate'),$_smarty_tpl ) );?>
 " method="post" >
-            <img class="mb-4" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+            <img class="mb-4 img-fluid" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumbread.svg" alt="" width="156" height="88">
             <h1 class="h3 mb-3 fw-normal">Logowanie</h1>
 

@@ -6,20 +6,17 @@
  */
 
 namespace app\controllers;
-
-use core\App;
-use core\Utils;
+use \core\App;
 
 /**
- * Description of CategoriesCtrl
+ * Description of FatalError
  *
  * @author Krisent
  */
-class CategoriesCtrl {
-    //put your code here
-    public function action_categories(){
-        App::getSmarty()->display("Categories.tpl");
+class FatalError {
+    public function action_fatalError () {
         
-
+        App::getSmarty()->display("FatalError.tpl");
     }
+    //put your code here
 }

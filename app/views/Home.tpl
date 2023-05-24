@@ -34,27 +34,33 @@
             {for $i = 0 to 10}
                     
                
+
+                
+                
                 <div class="card bg-dark-subtle m-2 " style="width: 18rem;">
                     
                   {*Removing and adding categories !!! admin only !!! *}
-                    {if \core\RoleUtils::inRole("admin")}
-                        <span class="position-absolute top-0 start-85 translate-middle p-2 bg-primary rounded-circle ">
+                   {* {if \core\RoleUtils::inRole("admin")}
+                        <span class="position-absolute top-0 start-85 translate-middle p-2 bg-primary rounded-circle border-primary-subtle btn">
                             <img class=" mx-auto " " src="{url}/resources/icons/wrench.svg" alt="" width="16" height="16" style="fill: red;"> 
                             <span class="visually-hidden">Edit Category</span>
                         </span>
-                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger  rounded-circle">
-                            <img class=" mx-auto " " src="{url}/resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
+                        
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn">
+                          <img class=" mx-auto " " src="{url}/resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
                           <span class="visually-hidden">Remove Category</span>
                         </span>
-                    {/if}
+                    {/if}*}
                     
-                    <img src="{url}/resources/yuumbread.svg" class="card-img-top border-bottom" alt="...">
-                    
+                    <a href = "{url action='home'}" class=" stretched-link ">
+                     <img src="{url}/resources/yuumbread.svg" class="card-img-top border-bottom" alt="...">
+                    </a>
                     <div class="card-body bg-dark-subtle">
                       <h5 class="card-title ">Kategoria</h5>
                       <p class="card-text ">Dana kategoria jest poświęcona bla bla bla.</p>
-                      {*<a href="#" class="btn btn-primary stretched-link visually-hidden-focusable"></a>*}
+                      
                     </div>
+                    
                     {*<ul class="list-group list-group-flush ">
                       <li class="list-group-item bg-dark-subtle">An item</li>
                       <li class="list-group-item bg-dark-subtle">A second item</li>
@@ -67,6 +73,10 @@
                 </div>
 
             {/for}
+            
+            
+            
+           
             </div>
  
             

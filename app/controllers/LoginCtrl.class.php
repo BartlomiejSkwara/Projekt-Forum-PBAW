@@ -50,14 +50,28 @@ class LoginCtrl {
         
         
         if($bothParamsAreOk){
-            $record = App::getDB()->select("user",["username","password","role"],
-            [
-                "AND"=>[
-                    "username"=> $this->form->login,
-                    "password"=> $this->form->password
+            
+            try {
+                $record = App::getDB()->select("user",["username","password","role"],
+                [
+                    "AND"=>[
+                        "username"=> $this->form->login,
+                        "password"=> $this->form->password
+                    ]
                 ]
-            ]
-            );
+                );
+            } catch (\PDOException $e) {
+                
+                if (App::getConf()->debug){
+                    Utils::addErrorMessage($e->getMessage());
+                    return false;
+                
+                }
+                else
+                    App::getRouter()->redirectTo("fatalError");
+                
+            }
+           
             if($record!=null){
             RoleUtils::addRole("user");
             
