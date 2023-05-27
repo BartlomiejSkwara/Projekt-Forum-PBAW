@@ -1,4 +1,4 @@
-{extends file="templates\blankMain.tpl"}
+{extends file="templates\main.tpl"}
 {block name = "main"}
 {assign var="title" value="Login"}
 

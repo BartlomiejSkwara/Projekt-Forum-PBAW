@@ -20,7 +20,7 @@ Utils::addRoute('fatalError', 'FatalError');
 Utils::addRoute('deleteCategory', 'CategoryCUD');
 Utils::addRoute('editCategory', 'CategoryCUD');
 Utils::addRoute('addCategory', 'CategoryCUD');
-//Utils::addRoute('thread', 'threadCtrl');
+Utils::addRoute('addCategoryView', 'CategoryCUD');
 //Utils::addRoute('thread', 'threadCtrl');
 
 //Utils::addRoute('profile', 'profileCtrl');

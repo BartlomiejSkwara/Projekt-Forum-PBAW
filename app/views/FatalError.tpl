@@ -1,4 +1,4 @@
-{extends file="templates\blankMain.tpl"}
+{extends file="templates\main.tpl"}
 {assign var="title" value="Fatal Error"}
 
 {block name = "main"}

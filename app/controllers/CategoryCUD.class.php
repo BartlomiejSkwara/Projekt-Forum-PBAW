@@ -7,6 +7,7 @@
 
 namespace app\controllers;
 
+use core\App;
 /**
  * Description of CategoryCUD
  *
@@ -14,4 +15,16 @@ namespace app\controllers;
  */
 class CategoryCUD {
     //put your code here
+    public function action_addCategoryView(){
+    //App::getSmarty()->assign("header","Dodaj Kategorię");
+        App::getSmarty()->assign("title","Dodaj Kategorię");
+        App::getSmarty()->display("CategoryCU.tpl");
+        
+        
+    }
+    public function action_addCategory(){
+        
+        App::getSmarty()->assign("title","Dodaj Kategorię");
+        App::getSmarty()->display();
+    }
 }

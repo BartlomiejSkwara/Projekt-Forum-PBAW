@@ -86,21 +86,15 @@ class LoginCtrl {
                 Utils::addErrorMessage("Niepoprawne hasło albo login :<");
                 return false;
             }
-        }
-            
-        
-        
-        
-        
+        }   
     }
-
-
     public function action_loginValidate() {
 
         if($this->validateLoginParams()){
             App::getRouter()->redirectTo("categories");
         }
         else{
+            App::getSmarty()->assign("onlyBody",false);
             App::getSmarty()->assign("title","Login"); 
             App::getSmarty()->display("Login.tpl");
         }
@@ -109,13 +103,13 @@ class LoginCtrl {
     }
     
     public function action_login(){
+        App::getSmarty()->assign("onlyBody",false);
         App::getSmarty()->assign("title","Login"); 
         App::getSmarty()->display("Login.tpl");
     }
     
     public function action_logout(){
         session_destroy();
-
         App::getRouter()->redirectTo("categories");
     }
     

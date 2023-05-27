@@ -3,10 +3,10 @@
 {block name = "main"}
     
   
-    <div class = "d-flex pt-5 mt-5 mx-auto  flex-column">
-        
-          <div class="px-4 py-5 my-5 text-center">
-            <img class="d-block mx-auto mb-4" src="{url}/resources/yuumsideview.svg" alt="" width="72" height="57">
+    
+          
+          <div class="px-4 py-5 mx-auto  my-5 text-center">
+            <img class="d-block  mx-auto mb-4" src="{url}/resources/yuumsideview.svg" alt="" width="72" height="57">
             <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
@@ -29,7 +29,7 @@
         
         
         {*Display all of the categories taken from db*}
-        <div class= "text-center mx-auto mt-auto dark ">
+        <div class= "text-center mx-auto mt-5 dark ">
             <div class ="d-flex flex-wrap justify-content-center container">
             
 
@@ -69,9 +69,9 @@
             {/foreach}
             
             {if \core\RoleUtils::inRole("admin")}
-                <a href = "{url action='addCategory'}"   > 
+                <a href = "{url action='addCategoryView'}"   > 
                     <div class="card bg-dark-subtle m-2 border-dots" style="width: 18rem; height: 18rem;"> 
-                        <img class="w-75 m-auto custom-icon"  src="{url}/resources/icons/plus.svg" alt=""  >              
+                        <img class="w-50 m-auto custom-icon"  src="{url}/resources/icons/plus.svg" alt=""  >              
                     </div>
                 </a>
             {/if}
@@ -84,7 +84,7 @@
         </div>
         
         
-    </div>
+    
 
 
 {/block}
