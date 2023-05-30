@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-27 09:33:02
+/* Smarty version 4.3.0, created on 2023-05-30 21:27:38
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6471b22eabe661_75244559',
+  'unifunc' => 'content_64764e2ac71f33_69749966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1685172781,
+      1 => 1685474857,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6471b22eabe661_75244559 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64764e2ac71f33_69749966 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13999109636471b22ea91f97_56858409', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_85368438664764e2ac45ee9_16974921', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_13999109636471b22ea91f97_56858409 extends Smarty_Internal_Block
+class Block_85368438664764e2ac45ee9_16974921 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_13999109636471b22ea91f97_56858409',
+    0 => 'Block_85368438664764e2ac45ee9_16974921',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,10 +67,35 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </div>
         </div>
         
-        
-        
-        
-        
+
+            
+            
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header ">
+          <h5 class="modal-title">Czy na pewno chcesz <b class = "text-danger">usunąć</b> kategorię ?  </b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <p>Zrobienie tego będzie skutkowało <b class = "text-danger">skasowaniem wszystkich </b> wątków zawartych w kategorii 
+              <a class="modal-category-name-title link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"></a> 
+               i może okazać się nieodwracalne. 
+              <b class = "text-danger">Jesteś pewien </b> że chcesz to zrobić ?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tak</button>
+        <button type="button" class="btn btn-primary">Nie</button>
+      </div>
+    </div>
+  </div>
+</div>
+            
+            
+
+
+
                 <div class= "text-center mx-auto mt-5 dark ">
             <div class ="d-flex flex-wrap justify-content-center container">
             
@@ -95,15 +120,14 @@ $_smarty_tpl->tpl_vars['cat']->do_else = false;
                                 <span class="visually-hidden">Edit Category</span>
                             </span>
                         </a>
-                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'deleteCategory'),$_smarty_tpl ) );?>
-/<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
-">
-                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn">
-                              <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+                                
+        
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn"  data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever="<?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
+"> 
+                          <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
-                              <span class="visually-hidden">Remove Category</span>
-                            </span>
-                        </a>
+                          <span class="visually-hidden">Remove Category</span>
+                        </span>
                     <?php }?>
                     
                     <a href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'category'),$_smarty_tpl ) );?>
@@ -147,7 +171,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         
     
 
-
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/homeModalsStuff.js"><?php echo '</script'; ?>
+>
 <?php
 }
 }

@@ -91,7 +91,7 @@ class LoginCtrl {
     public function action_loginValidate() {
 
         if($this->validateLoginParams()){
-            App::getRouter()->redirectTo("categories");
+            App::getRouter()->redirectTo("home");
         }
         else{
             App::getSmarty()->assign("onlyBody",false);

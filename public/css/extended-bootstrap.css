@@ -12,7 +12,9 @@ body {
   flex-shrink: 0;
 }
 
-
+.nonResizable{
+    resize: none;
+}
 
 
 

@@ -7,7 +7,7 @@
         <div class= "text-center mx-auto mt-auto dark ">
           <form action="{url action='loginValidate'}" method="post" >
             <img class="mb-4 img-fluid" src="{url}/resources/yuumbread.svg" alt="" width="156" height="88">
-            <h1 class="h3 mb-3 fw-normal">Logowanie</h1>
+            <h1 class="h3 mb-4 fw-normal display-5">Logowanie</h1>
 
             <div class="form-floating">
               <input type="login" class="form-control" name='loginInput' maxlength="20" id="loginInput" placeholder="Login">

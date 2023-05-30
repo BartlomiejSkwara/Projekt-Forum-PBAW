@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-24 11:17:13
+/* Smarty version 4.3.0, created on 2023-05-30 21:19:43
   from 'E:\XAMPP\htdocs\projekt\app\views\FatalError.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_646dd619be9283_09766722',
+  'unifunc' => 'content_64764c4f07d5e4_62664744',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7039021a66ab6fa12fc11a3091944b15548f84b5' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\FatalError.tpl',
-      1 => 1684919824,
+      1 => 1685173320,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_646dd619be9283_09766722 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64764c4f07d5e4_62664744 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,18 +28,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 <?php $_smarty_tpl->_assignInScope('title', "Fatal Error");?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_563807259646dd619be51f0_64211061', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_172935787764764c4f079931_33605677', "main");
 ?>
 
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\blankMain.tpl");
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_563807259646dd619be51f0_64211061 extends Smarty_Internal_Block
+class Block_172935787764764c4f079931_33605677 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_563807259646dd619be51f0_64211061',
+    0 => 'Block_172935787764764c4f079931_33605677',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

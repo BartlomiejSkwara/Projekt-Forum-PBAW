@@ -24,10 +24,35 @@
             </div>
         </div>
         
-        
-        
-        
-        
+
+            
+            
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header ">
+          <h5 class="modal-title">Czy na pewno chcesz <b class = "text-danger">usunąć</b> kategorię ?  </b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <p>Zrobienie tego będzie skutkowało <b class = "text-danger">skasowaniem wszystkich </b> wątków zawartych w kategorii 
+              <a class="modal-category-name-title link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"></a> 
+               i może okazać się nieodwracalne. 
+              <b class = "text-danger">Jesteś pewien </b> że chcesz to zrobić ?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-danger" href="{url action='deleteCategory'}/{$cat["idcategory"]}" >Tak</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Nie</button>
+      </div>
+    </div>
+  </div>
+</div>
+            
+            
+
+
+
         {*Display all of the categories taken from db*}
         <div class= "text-center mx-auto mt-5 dark ">
             <div class ="d-flex flex-wrap justify-content-center container">
@@ -46,12 +71,13 @@
                                 <span class="visually-hidden">Edit Category</span>
                             </span>
                         </a>
-                        <a href="{url action='deleteCategory'}/{$cat["idcategory"]}">
-                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn">
-                              <img class=" mx-auto " " src="{url}/resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
-                              <span class="visually-hidden">Remove Category</span>
-                            </span>
-                        </a>
+                                
+        {*<button type="button" class="btn btn-primary" data-bs-target="#deleteModal" data-bs-whatever="nazwa1">Open modal for @mdo</button>*}
+
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn"  data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever="{$cat["name"]}"> 
+                          <img class=" mx-auto " " src="{url}/resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
+                          <span class="visually-hidden">Remove Category</span>
+                        </span>
                     {/if}
                     
                     <a href = "{url action='category'}/{$cat["idcategory"]}" class=" stretched-link ">
@@ -86,5 +112,5 @@
         
     
 
-
+<script src="{$conf->app_url}/js/homeModalsStuff.js"></script>
 {/block}

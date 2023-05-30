@@ -17,10 +17,10 @@ Utils::addRoute('fatalError', 'FatalError');
 
 
 
-Utils::addRoute('deleteCategory', 'CategoryCUD');
-Utils::addRoute('editCategory', 'CategoryCUD');
-Utils::addRoute('addCategory', 'CategoryCUD');
-Utils::addRoute('addCategoryView', 'CategoryCUD');
+Utils::addRoute('deleteCategory', 'CategoryCUD',['admin']);
+Utils::addRoute('editCategory', 'CategoryCUD',['admin']);
+Utils::addRoute('addCategory', 'CategoryCUD',['admin']);
+Utils::addRoute('addCategoryView', 'CategoryCUD',['admin']);
 //Utils::addRoute('thread', 'threadCtrl');
 
 //Utils::addRoute('profile', 'profileCtrl');

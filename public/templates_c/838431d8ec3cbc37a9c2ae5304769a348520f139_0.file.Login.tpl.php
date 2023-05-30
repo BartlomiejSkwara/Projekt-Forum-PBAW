@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-27 09:42:18
+/* Smarty version 4.3.0, created on 2023-05-30 17:30:43
   from 'E:\XAMPP\htdocs\projekt\app\views\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6471b45a2d6a65_22150718',
+  'unifunc' => 'content_647616a3dafeb2_25177404',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '838431d8ec3cbc37a9c2ae5304769a348520f139' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Login.tpl',
-      1 => 1685173332,
+      1 => 1685460642,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_6471b45a2d6a65_22150718 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647616a3dafeb2_25177404 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1980713786471b45a2c9bd1_59821478', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_820804496647616a3da3c59_49351902', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_1980713786471b45a2c9bd1_59821478 extends Smarty_Internal_Block
+class Block_820804496647616a3da3c59_49351902 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_1980713786471b45a2c9bd1_59821478',
+    0 => 'Block_820804496647616a3da3c59_49351902',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,7 +53,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 " method="post" >
             <img class="mb-4 img-fluid" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumbread.svg" alt="" width="156" height="88">
-            <h1 class="h3 mb-3 fw-normal">Logowanie</h1>
+            <h1 class="h3 mb-4 fw-normal display-5">Logowanie</h1>
 
             <div class="form-floating">
               <input type="login" class="form-control" name='loginInput' maxlength="20" id="loginInput" placeholder="Login">

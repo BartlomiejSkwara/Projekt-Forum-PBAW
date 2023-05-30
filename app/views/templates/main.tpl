@@ -17,11 +17,16 @@
             <div class = "d-flex pt-5 mt-5 mx-auto  flex-column main-content">
         {/if}
             
+        
+        
         {block name = main} pustka :> {/block}
             
+        
+        
+        
         {if $onlyBody|default: true == true}
-        </div>
-        {include file="footer.tpl"}
+            </div>
+            {include file="footer.tpl"}
         {/if}
         
         
