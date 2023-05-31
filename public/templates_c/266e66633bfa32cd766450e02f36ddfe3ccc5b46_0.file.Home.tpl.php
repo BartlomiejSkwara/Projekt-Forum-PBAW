@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-30 21:27:38
+/* Smarty version 4.3.0, created on 2023-05-31 20:33:37
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64764e2ac71f33_69749966',
+  'unifunc' => 'content_64779301aeba47_21721129',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1685474857,
+      1 => 1685558015,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64764e2ac71f33_69749966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64779301aeba47_21721129 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_85368438664764e2ac45ee9_16974921', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_211231144764779301ab73f3_82390172', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_85368438664764e2ac45ee9_16974921 extends Smarty_Internal_Block
+class Block_211231144764779301ab73f3_82390172 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_85368438664764e2ac45ee9_16974921',
+    0 => 'Block_211231144764779301ab73f3_82390172',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,26 +46,26 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     
   
     
-          
-          <div class="px-4 py-5 mx-auto  my-5 text-center">
-            <img class="d-block  mx-auto mb-4" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+
+<div class="px-4 py-5 mx-auto  my-5 text-center">
+  <img class="d-block  mx-auto mb-4" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumsideview.svg" alt="" width="72" height="57">
-            <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae diam aliquet, convallis nunc id, tincidunt urna. 
-                    Duis tempor justo nisl, sed feugiat massa suscipit at. Etiam non placerat nulla. Aliquam euismod odio vitae est imperdiet facilisis. 
-                    Proin sollicitudin metus in neque semper, et consequat ipsum consequat. Ut nec pellentesque leo. Quisque aliquet turpis quis metus pretium venenatis. 
-                    Aliquam cursus justo sapien, vitae laoreet augue tincidunt quis. Vivamus massa est, accumsan in ipsum sit amet, finibus elementum justo. 
-                    Nam erat tellus, commodo at justo eget, molestie ultrices erat. Sed quis ultrices velit. Cras tempor massa volutpat dapibus pretium. Ut id felis ac nisl maximus rhoncus.
-                    Vivamus nulla erat, rhoncus vitae nunc elementum, elementum rhoncus odio. Etiam quis felis risus. Nulla ultrices porttitor rhoncus.
-                </p>
-              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-              </div>
-            </div>
-        </div>
+  <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+  <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae diam aliquet, convallis nunc id, tincidunt urna. 
+          Duis tempor justo nisl, sed feugiat massa suscipit at. Etiam non placerat nulla. Aliquam euismod odio vitae est imperdiet facilisis. 
+          Proin sollicitudin metus in neque semper, et consequat ipsum consequat. Ut nec pellentesque leo. Quisque aliquet turpis quis metus pretium venenatis. 
+          Aliquam cursus justo sapien, vitae laoreet augue tincidunt quis. Vivamus massa est, accumsan in ipsum sit amet, finibus elementum justo. 
+          Nam erat tellus, commodo at justo eget, molestie ultrices erat. Sed quis ultrices velit. Cras tempor massa volutpat dapibus pretium. Ut id felis ac nisl maximus rhoncus.
+          Vivamus nulla erat, rhoncus vitae nunc elementum, elementum rhoncus odio. Etiam quis felis risus. Nulla ultrices porttitor rhoncus.
+      </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+    </div>
+  </div>
+</div>
         
 
             
@@ -85,8 +85,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
               <b class = "text-danger">Jesteś pewien </b> że chcesz to zrobić ?</p>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tak</button>
-        <button type="button" class="btn btn-primary">Nie</button>
+        <button type="button" class="btn btn-danger" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'deleteCategory'),$_smarty_tpl ) );?>
+/<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
+" >Tak</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Nie</button>
       </div>
     </div>
   </div>
@@ -111,7 +113,7 @@ $_smarty_tpl->tpl_vars['cat']->do_else = false;
                 <div class="card bg-dark-subtle m-2 " style="width: 18rem; height: 18rem;">
                     
                                       <?php if (\core\RoleUtils::inRole("admin")) {?>
-                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'editCategory'),$_smarty_tpl ) );?>
+                        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'editCategoryView'),$_smarty_tpl ) );?>
 /<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
 ">
                             <span class="position-absolute top-0 start-85 translate-middle p-2 bg-primary rounded-circle border-primary-subtle btn">
@@ -121,8 +123,7 @@ $_smarty_tpl->tpl_vars['cat']->do_else = false;
                             </span>
                         </a>
                                 
-        
-                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn"  data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever="<?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever="<?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
 "> 
                           <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
@@ -132,18 +133,17 @@ $_smarty_tpl->tpl_vars['cat']->do_else = false;
                     
                     <a href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'category'),$_smarty_tpl ) );?>
 /<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
-" class=" stretched-link ">
-                     <img src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+" class ="text-decoration-none text-reset" >
+                        <img src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumbread.svg" class="card-img-top border-bottom" alt="...">
-                    </a>
-                    <div class="card-body bg-dark-subtle">
-                      <h5 class="card-title "><?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
+
+                        <div class="card-body bg-dark-subtle">
+                          <h5 class="card-title "><?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
 </h5>
-                      <p class="card-text "><?php echo $_smarty_tpl->tpl_vars['cat']->value["description"];?>
+                          <p class="card-text "><?php echo $_smarty_tpl->tpl_vars['cat']->value["description"];?>
 </p>
-                      
-                    </div>
-                    
+                        </div>
+                    </a>
 
                 </div>
 

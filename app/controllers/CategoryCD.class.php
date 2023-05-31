@@ -15,7 +15,7 @@ use core\Validator;
  *
  * @author Krisent
  */
-class CategoryCUD {
+class CategoryCD {
     
     
     private $editForm;
@@ -25,16 +25,13 @@ class CategoryCUD {
     }
     
     
-    
     public function action_addCategoryView(){
-    //App::getSmarty()->assign("header","Dodaj Kategorię");
         App::getSmarty()->assign("title","Dodaj Kategorię");
-        App::getSmarty()->display("CategoryCU.tpl");
-        
-        
+        App::getSmarty()->assign("selectedAction","addCategory");
+        App::getSmarty()->display("CategoryCU.tpl");      
     }
     
-    private function validateCategoryCU(){
+    private function validateCategoryCreate(){
         $validator = new Validator();
         
         $this->editForm->name = $validator ->validateFromPost(
@@ -65,11 +62,13 @@ class CategoryCUD {
     }
     public function action_addCategory(){
         
-        if($this->validateCategoryCU()){
+        if($this->validateCategoryCreate()){
             try{
+                $this->editForm->categoryId = str_replace(" ","-",strtolower($this->editForm->name));
+                
                 App::getDB()->insert("category",
                     [
-                    "idcategory"=> str_replace(" ","-",strtolower($this->editForm->name)),
+                    "idcategory"=> $this->editForm->categoryId,
                     "name" => $this->editForm->name,
                     "description" => $this->editForm->description,
                     ]
@@ -89,6 +88,8 @@ class CategoryCUD {
         
         App::getSmarty()->assign("lastValues",$this->editForm);
         App::getSmarty()->assign("title","Dodaj Kategorię");
+        App::getSmarty()->assign("selectedAction","addCategory");
+
         App::getSmarty()->display("CategoryCU.tpl");
     }
     
