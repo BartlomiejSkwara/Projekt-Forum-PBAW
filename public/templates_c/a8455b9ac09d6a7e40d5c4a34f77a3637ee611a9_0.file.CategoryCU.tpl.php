@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-31 21:34:32
+/* Smarty version 4.3.0, created on 2023-06-01 15:45:28
   from 'E:\XAMPP\htdocs\projekt\app\views\CategoryCU.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6477a148ac3cf4_99701249',
+  'unifunc' => 'content_6478a0f8cab969_17922937',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a8455b9ac09d6a7e40d5c4a34f77a3637ee611a9' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\CategoryCU.tpl',
-      1 => 1685561668,
+      1 => 1685627127,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_6477a148ac3cf4_99701249 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6478a0f8cab969_17922937 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -30,18 +30,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20500776926477a148a89d29_59315665', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6915105146478a0f8c80445_78769471', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "main"} */
-class Block_20500776926477a148a89d29_59315665 extends Smarty_Internal_Block
+class Block_6915105146478a0f8c80445_78769471 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_20500776926477a148a89d29_59315665',
+    0 => 'Block_6915105146478a0f8c80445_78769471',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,14 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
         <div class= "text-center mx-auto mt-auto dark">
           <form action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>$_smarty_tpl->tpl_vars['selectedAction']->value),$_smarty_tpl ) );
-$_prefixVariable1 = "editCategory";
-$_smarty_tpl->_assignInScope('selectedAction', $_prefixVariable1);
-if ($_prefixVariable1) {?>/<?php echo $_smarty_tpl->tpl_vars['editedID']->value;
+if ($_smarty_tpl->tpl_vars['selectedAction']->value == "editCategory") {?>/<?php echo $_smarty_tpl->tpl_vars['editedID']->value;
 }?>" method="post" >
            
-              <h1 class="h3 mb-5 fw-normal display-5"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
-<b class="text-primary"><?php if ((isset($_smarty_tpl->tpl_vars['category']->value["name"]))) {
-echo $_smarty_tpl->tpl_vars['category']->value["name"];
+                    <h1 class="h3 mb-5 fw-normal display-5"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+<br><b class="text-primary"><?php if ((isset($_smarty_tpl->tpl_vars['editedID']->value))) {
+echo $_smarty_tpl->tpl_vars['editedID']->value;
 }?></b></h1>
 
             <div class="mx-auto mb-3 " style="width: 21rem;">

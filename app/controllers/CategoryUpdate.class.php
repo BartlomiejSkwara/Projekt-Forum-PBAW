@@ -30,20 +30,19 @@ class CategoryUpdate {
     
     private function validateEditCategoryView(){
         $validator = new Validator();
-        $this->editForm->categoryId =$validator->validateFromCleanURL(1,
+        $this->urlID =$validator->validateFromCleanURL(1,
             [ 
             'required' => true , 
             'min_length' => 1,
-            'max_length' => 45, 
             'validator_message' => 'Wartość podana w adresie jest nieprawidłowa', 
             ]  
         );
-        
         if($validator->isLastOK()==false)
             return false;
-
-        $this->urlID = urldecode($this->editForm->categoryId);
-
+        
+        $this->urlID = urldecode($this->urlID);
+        
+        
         try {
             $this->record = App::getDB()->select("category", ["idCategory","name","description"], 
             [
@@ -69,16 +68,19 @@ class CategoryUpdate {
         return true;
     }
 
+    private function renderCategoryView() {
+        App::getSmarty()->assign("title","Edytujesz Kategorię");
+        App::getSmarty()->assign("selectedAction","editCategory");
+        App::getSmarty()->assign("editedID", $this->urlID);
+        App::getSmarty()->display("CategoryCU.tpl");
 
+    }
+    
     public function action_editCategoryView(){
         
         if($this->validateEditCategoryView()){
             App::getSmarty()->assign("category", $this->record[0]);
-            App::getSmarty()->assign("title","Edytujesz Kategorię<br>");
-            App::getSmarty()->assign("selectedAction","editCategory");
-            App::getSmarty()->assign("editedID", $this->urlID);
-
-            App::getSmarty()->display("CategoryCU.tpl");
+            $this->renderCategoryView();           
         }
         else
             App::getRouter()->redirectTo("home");
@@ -92,14 +94,14 @@ class CategoryUpdate {
             [ 
             'required' => true , 
             'min_length' => 1,
-            'max_length' => 45, 
             'validator_message' => 'Wartość podana w adresie jest nieprawidłowa', 
             ]  
         );
         
-        $this->urlID = urldecode($this->editForm->categoryId);
+        $this->urlID = urldecode($this->urlID);
 
-        
+                        
+                
         $this->editForm->name = $validator ->validateFromPost(
             "categoryName",
             [ 
@@ -108,7 +110,9 @@ class CategoryUpdate {
             'required_message' => 'Nie wypełniono pola "Nazwa Kategorii"', 
             'min_length' => 1,
             'max_length' => 45, 
-            'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa', 
+            'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ', 
+            'regexp' => '/^(?!.*["\'&<>\x5C\x2F]).*$/',
+            'regexp_message' => 'Wartość w polu "Nazwa Kategorii" zawiera jeden z zakazanych znaków: " \' & < > \ /',
             ]         
         );
 
@@ -119,7 +123,9 @@ class CategoryUpdate {
             'required' => true,
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
-            'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa', 
+            'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa',
+            'regexp' => '/^(?!.*["\'&<>]).*$/',
+            'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );
         
@@ -131,17 +137,20 @@ class CategoryUpdate {
             try{
                 $this->editForm->categoryId = str_replace(" ","-",strtolower($this->editForm->name));
                 
-                App::getDB()->replace("category",
+                App::getDB()->update("category",
                     [
-                    "idcategory"=> $this->editForm->categoryId,
+                    
                     "name" => $this->editForm->name,
                     "description" => $this->editForm->description,
+                    "idcategory" => $this->editForm->categoryId,
                     ],
                         
                     [
-                        "idcategory"=> $this->urlID,
+                        "idcategory" => $this->urlID,
                     ]
                 );
+                
+                App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {
                 
                 if (App::getConf()->debug){
@@ -152,17 +161,10 @@ class CategoryUpdate {
                     App::getRouter()->redirectTo("fatalError");
             }
            
-            App::getRouter()->redirectTo("home");
+            
         }
         
         App::getSmarty()->assign("lastValues",$this->editForm);
-        
-        App::getSmarty()->assign("category", $this->record[0]);
-        App::getSmarty()->assign("title","Edytujesz Kategorię<br>");
-        App::getSmarty()->assign("editedID", $this->urlID);
-
-        App::getSmarty()->assign("selectedAction","editCategory");
-
-        App::getSmarty()->display("CategoryCU.tpl");
+        $this->renderCategoryView();           
     }
 }

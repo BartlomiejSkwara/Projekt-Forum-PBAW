@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-31 20:33:37
+/* Smarty version 4.3.0, created on 2023-06-01 16:49:17
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64779301aeba47_21721129',
+  'unifunc' => 'content_6478afedd64559_59698355',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1685558015,
+      1 => 1685630948,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64779301aeba47_21721129 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6478afedd64559_59698355 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_211231144764779301ab73f3_82390172', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8570487006478afedd3c1f1_91529619', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_211231144764779301ab73f3_82390172 extends Smarty_Internal_Block
+class Block_8570487006478afedd3c1f1_91529619 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_211231144764779301ab73f3_82390172',
+    0 => 'Block_8570487006478afedd3c1f1_91529619',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -80,14 +80,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       </div>
       <div class="modal-body">
           <p>Zrobienie tego będzie skutkowało <b class = "text-danger">skasowaniem wszystkich </b> wątków zawartych w kategorii 
-              <a class="modal-category-name-title link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"></a> 
+              <b class="modal-category-name-title text-primary"></b> 
                i może okazać się nieodwracalne. 
               <b class = "text-danger">Jesteś pewien </b> że chcesz to zrobić ?</p>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-danger" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'deleteCategory'),$_smarty_tpl ) );?>
-/<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
-" >Tak</button>
+        <a type="button" class="modal-button-accept btn btn-danger" href="" >Tak</a>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Nie</button>
       </div>
     </div>
@@ -123,7 +121,8 @@ $_smarty_tpl->tpl_vars['cat']->do_else = false;
                             </span>
                         </a>
                                 
-                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever="<?php echo $_smarty_tpl->tpl_vars['cat']->value["name"];?>
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-url="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'deleteCategory'),$_smarty_tpl ) );?>
+" data-bs-id="<?php echo $_smarty_tpl->tpl_vars['cat']->value["idcategory"];?>
 "> 
                           <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 

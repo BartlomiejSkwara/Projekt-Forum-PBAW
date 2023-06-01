@@ -37,12 +37,12 @@
       </div>
       <div class="modal-body">
           <p>Zrobienie tego będzie skutkowało <b class = "text-danger">skasowaniem wszystkich </b> wątków zawartych w kategorii 
-              <a class="modal-category-name-title link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"></a> 
+              <b class="modal-category-name-title text-primary"></b> 
                i może okazać się nieodwracalne. 
               <b class = "text-danger">Jesteś pewien </b> że chcesz to zrobić ?</p>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-danger" href="{url action='deleteCategory'}/{$cat["idcategory"]}" >Tak</button>
+        <a type="button" class="modal-button-accept btn btn-danger" href="" >Tak</a>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Nie</button>
       </div>
     </div>
@@ -72,7 +72,7 @@
                             </span>
                         </a>
                                 
-                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever="{$cat["name"]}"> 
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle border-danger-subtle btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-url="{url action='deleteCategory'}" data-bs-id="{$cat["idcategory"]}"> 
                           <img class=" mx-auto " " src="{url}/resources/icons/trash.svg" alt="" width="16" height="16" style="fill: red;"> 
                           <span class="visually-hidden">Remove Category</span>
                         </span>

@@ -182,8 +182,8 @@ class Validator {
                 // REGEXP
                 if (isset($config['regexp']) && !preg_match($config['regexp'], $value)) {
                     $this->last_validation = false;
-                    if (isset($config['validator_message']))
-                        $msgs [] = $config['validator_message'];
+                    if (isset($config['regexp_message']))
+                        $msgs [] = $config['regexp_message'];
                     else
                         $msgs [] = "Parameter '$idx' does not match";
                 }
@@ -234,8 +234,10 @@ class Validator {
      *    'max' => maximum value (only for numeric, int or float),
      *    'date_format' => format,
      *    'regexp' => regular expression,
+     *    'regexp_message' => 'message...',
      *    'validator_message' => 'message...',
      *    'message_type' => error | warning | info,
+     *    
      *  ]
      * @return $value value after validation and optional processing (escape,trim,int,float,date)
      */

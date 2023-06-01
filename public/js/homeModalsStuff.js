@@ -12,17 +12,17 @@ exampleModal.addEventListener('show.bs.modal', event => {
   // Button that triggered the modal
   const button = event.relatedTarget;
   // Extract info from data-bs-* attributes
-  const recipient = button.getAttribute('data-bs-whatever');
+  const url = button.getAttribute('data-bs-url');
+  const id = button.getAttribute('data-bs-id');
   // If necessary, you could initiate an AJAX request here
   // and then do the updating in a callback.
   //
   // Update the modal's content.
   const modalBody = exampleModal.querySelector('.modal-category-name-title')
-  const modalCategoryHref = exampleModal.querySelector('.modal-body input')
+  const modalYesButton = exampleModal.querySelector('.modal-button-accept')
     
-  modalBody.textContent = ` ${recipient}`;
+  modalBody.textContent = ` ${id}`;
+  modalYesButton.setAttribute("href", url.concat('/').concat(id));
   
-  modalBody.setAttribute("href", "xyz.php");
-  modalBodyInput.value = recipient
-  console.log("s");
+
 })

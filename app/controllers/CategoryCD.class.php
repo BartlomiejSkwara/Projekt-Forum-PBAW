@@ -42,7 +42,10 @@ class CategoryCD {
             'required_message' => 'Nie wypełniono pola "Nazwa Kategorii"', 
             'min_length' => 1,
             'max_length' => 45, 
-            'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa', 
+            'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ',
+            'regexp' => '/^(?!.*["\'&<>\\\/]).*$/',
+            'regexp_message' => 'Wartość w polu "Nazwa Kategorii" zawiera jeden z zakazanych znaków: " \' & < > \ /',
+ 
             ]         
         );
 
@@ -53,10 +56,11 @@ class CategoryCD {
             'required' => true,
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
-            'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa', 
+            'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ',
+            'regexp' => '/^(?!.*["\'&<>]).*$/',
+            'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );
-        
         return App::getMessages()->getSize()<1;
         
     }
@@ -93,7 +97,44 @@ class CategoryCD {
         App::getSmarty()->display("CategoryCU.tpl");
     }
     
-    public function action_deleteCategory(){
+    private function validateDeleteCategory(){
+        $validator = new Validator();
+        $this->editForm->categoryId = $validator->validateFromCleanURL(1,
+            [ 
+            'required' => true , 
+            'min_length' => 1,
+            'validator_message' => 'Wartość podana w adresie jest nieprawidłowa', 
+            ]  
+        );
         
+        $this->editForm->categoryId = urldecode($this->editForm->categoryId);
+        
+        return App::getMessages()->getSize()<1;
+    }
+    public function action_deleteCategory(){
+        if($this->validateDeleteCategory()){
+            try{
+                
+                App::getDB()->delete("category",  
+                    [
+                        "idcategory" => $this->editForm->categoryId,
+                    ]
+                );
+                
+                App::getRouter()->redirectTo("home");
+            } catch (\PDOException $e) {
+                
+                if (App::getConf()->debug){
+                    Utils::addErrorMessage($e->getMessage());
+                    return false;
+                }
+                else
+                    App::getRouter()->redirectTo("fatalError");
+            }
+            
+            
+        }
+        
+        App::getRouter()->redirectTo("home");
     }
 }

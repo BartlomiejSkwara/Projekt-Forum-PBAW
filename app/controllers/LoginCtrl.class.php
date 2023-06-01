@@ -29,6 +29,7 @@ class LoginCtrl {
                 'required_message' => 'Nie podałeś loginu :<', 
                 'max_length' => 20,
                 'validator_message' => 'Podana wartość nie może być loginem',
+                
                 //'message_type' => error
             ]
         );
@@ -42,6 +43,7 @@ class LoginCtrl {
                 'required_message' => 'Nie podałeś hasła :<', 
                 'max_length' => 45,
                 'validator_message' => 'Podana wartość nie może być hasłem',
+
                 //'message_type' => error
             ]
         );
