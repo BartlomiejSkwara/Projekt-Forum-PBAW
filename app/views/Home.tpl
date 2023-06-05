@@ -61,7 +61,7 @@
                 
             {foreach $categories as $cat}
   
-                <div class="card bg-dark-subtle m-2 " style="width: 18rem; height: 18rem;">
+                <div class="card border-custom bg-dark-subtle m-2 " style="width: 18rem; height: 18rem;">
                     
                   {*Removing and adding categories !!! admin only !!! *}
                     {if \core\RoleUtils::inRole("admin")}
@@ -93,7 +93,7 @@
             
             {if \core\RoleUtils::inRole("admin")}
                 <a href = "{url action='addCategoryView'}"   > 
-                    <div class="card bg-dark-subtle m-2 border-dots" style="width: 18rem; height: 18rem;"> 
+                    <div class="card bg-dark-subtle m-2 border-dots border-custom" style="width: 18rem; height: 18rem;"> 
                         <img class="w-50 m-auto custom-icon"  src="{url}/resources/icons/plus.svg" alt=""  >              
                     </div>
                 </a>

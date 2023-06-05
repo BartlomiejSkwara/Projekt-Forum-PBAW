@@ -10,6 +10,7 @@ namespace app\controllers;
 use core\App;
 //use app\forms\CategoryEditForm;
 use core\Validator;
+use core\Utils;
 /**
  * Description of CategoryCUD
  *
@@ -43,7 +44,7 @@ class CategoryCD {
             'min_length' => 1,
             'max_length' => 45, 
             'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ',
-            'regexp' => '/^(?!.*["\'&<>\\\/]).*$/',
+            'regexp' => '/^(?!.*["\'<>\x5C\x2F]|.*&#38;).*$/',
             'regexp_message' => 'Wartość w polu "Nazwa Kategorii" zawiera jeden z zakazanych znaków: " \' & < > \ /',
  
             ]         
@@ -57,10 +58,13 @@ class CategoryCD {
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
             'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ',
-            'regexp' => '/^(?!.*["\'&<>]).*$/',
+            'regexp' => '/^(?!.*["\'<>]|.*&#38;).*$/',
             'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );
+        
+
+
         return App::getMessages()->getSize()<1;
         
     }
@@ -77,17 +81,22 @@ class CategoryCD {
                     "description" => $this->editForm->description,
                     ]
                 );
+                
+                App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {
                 
-                if (App::getConf()->debug){
+                if($e->getCode()==23000){
+                    Utils::addErrorMessage("Kategoria o podanej nazwie już istnieje");
+                }
+                else if (App::getConf()->debug){
                     Utils::addErrorMessage($e->getMessage());
-                    return false;
+
                 }
                 else
                     App::getRouter()->redirectTo("fatalError");
             }
            
-            App::getRouter()->redirectTo("home");
+           
         }
         
         App::getSmarty()->assign("lastValues",$this->editForm);

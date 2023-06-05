@@ -21,6 +21,11 @@ Utils::addRoute('editCategoryView', 'CategoryUpdate',['admin']);
 Utils::addRoute('deleteCategory', 'CategoryCD',['admin']);
 Utils::addRoute('addCategory', 'CategoryCD',['admin']);
 Utils::addRoute('addCategoryView', 'CategoryCD',['admin']);
+
+
+
+Utils::addRoute('category', 'Category');
+
 //Utils::addRoute('thread', 'threadCtrl');
 
 //Utils::addRoute('profile', 'profileCtrl');

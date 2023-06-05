@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-05-27 09:31:35
+/* Smarty version 4.3.0, created on 2023-06-05 15:35:21
   from 'E:\XAMPP\htdocs\projekt\app\views\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6471b1d7b18443_39780014',
+  'unifunc' => 'content_647de49921ebb7_94028147',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd356c445b05eac840ef968ba1c5e9707f2dc3f24' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\header.tpl',
-      1 => 1685172692,
+      1 => 1685972117,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6471b1d7b18443_39780014 (Smarty_Internal_Template $_smarty_tpl) {
-?><nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom" style="border-bottom: 2px var(--bs-border-style) var(--bs-border-color)!important">
+function content_647de49921ebb7_94028147 (Smarty_Internal_Template $_smarty_tpl) {
+?><nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom " style="border-bottom: 2px var(--bs-border-style) grey !important">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'home'),$_smarty_tpl ) );?>
 ">

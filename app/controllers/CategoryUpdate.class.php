@@ -9,6 +9,7 @@ namespace app\controllers;
 use core\Validator;
 use app\forms\CategoryEditForm;
 use core\App;
+use core\Utils;
 /**
  * Description of CategoryUpdate
  *
@@ -111,7 +112,7 @@ class CategoryUpdate {
             'min_length' => 1,
             'max_length' => 45, 
             'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ', 
-            'regexp' => '/^(?!.*["\'&<>\x5C\x2F]).*$/',
+            'regexp' => '/^(?!.*["\'<>\x5C\x2F]|.*&#38;).*$/',
             'regexp_message' => 'Wartość w polu "Nazwa Kategorii" zawiera jeden z zakazanych znaków: " \' & < > \ /',
             ]         
         );
@@ -124,7 +125,7 @@ class CategoryUpdate {
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
             'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa',
-            'regexp' => '/^(?!.*["\'&<>]).*$/',
+            'regexp' => '/^(?!.*["\'<>]|.*&#38;).*$/',
             'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );
@@ -153,7 +154,10 @@ class CategoryUpdate {
                 App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {
                 
-                if (App::getConf()->debug){
+                if($e->getCode()==23000){
+                    Utils::addErrorMessage("Kategoria o podanej nazwie już istnieje");
+                }
+                elseif (App::getConf()->debug){
                     Utils::addErrorMessage($e->getMessage());
                     return false;
                 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom" style="border-bottom: 2px var(--bs-border-style) var(--bs-border-color)!important">
+<nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom " style="border-bottom: 2px var(--bs-border-style) grey !important">
   <div class="container-fluid">
     <a class="navbar-brand" href="{url action='home'}">
         <img src="{url}/resources/yuumbread.svg" class="image-flip" width="59" height="33" class="me-3" alt="">

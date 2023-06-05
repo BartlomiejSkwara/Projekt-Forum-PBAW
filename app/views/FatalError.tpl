@@ -7,8 +7,11 @@
     <div class = "d-flex w-100 h-100 p-3 mx-auto flex-column">
         <div class= "text-center mx-auto my-auto dark w-60">
             <div class="">
-                <img class="mb-4 img-fluid" src="{url}/resources/yuumsad.svg" alt="" >                  
+            <img class="mb-4 img-fluid" src="{url}/resources/yuumsad.svg" alt="" >                  
             </div>
+            {if isset($customError)}
+                <h1>{$customError}</h1>
+            {else if}
             <h1>Drogi Użytkowniku </h1>
             <hr>
             <br>
@@ -22,7 +25,7 @@
             <br>
             <p>Prosimy więc o cierpliwość, postaramy się rozwikłać je tak szybko jak to tylko możliwe :> </p>
             <br>
-            
+            {/if}
         </div>
      
     </div>
