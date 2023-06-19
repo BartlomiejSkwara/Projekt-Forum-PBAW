@@ -11,6 +11,7 @@ use core\App;
 //use app\forms\CategoryEditForm;
 use core\Validator;
 use core\Utils;
+use core\SessionUtils;
 /**
  * Description of CategoryCUD
  *
@@ -44,7 +45,7 @@ class CategoryCD {
             'min_length' => 1,
             'max_length' => 45, 
             'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ',
-            'regexp' => '/^(?!.*["\'<>\x5C\x2F]|.*&#38;).*$/',
+            'regexp' => '/^(?!.*["\'<>\x5C\x2F]|.*&#(?:34|38|39|60|62);).*$/',
             'regexp_message' => 'Wartość w polu "Nazwa Kategorii" zawiera jeden z zakazanych znaków: " \' & < > \ /',
  
             ]         
@@ -58,7 +59,7 @@ class CategoryCD {
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
             'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ',
-            'regexp' => '/^(?!.*["\'<>]|.*&#38;).*$/',
+            'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
             'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );
@@ -81,6 +82,10 @@ class CategoryCD {
                     "description" => $this->editForm->description,
                     ]
                 );
+                
+                App::getMessages()->clear();
+                Utils::addInfoMessage("Dodanie kategorii zakończona sukcesem :>");
+                SessionUtils::storeMessages();
                 
                 App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {
@@ -130,6 +135,10 @@ class CategoryCD {
                     ]
                 );
                 
+                App::getMessages()->clear();
+                Utils::addInfoMessage("Usunięcie kategorii zakończone sukcesem :>");
+                SessionUtils::storeMessages();
+                
                 App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {
                 
@@ -142,8 +151,7 @@ class CategoryCD {
             }
             
             
-        }
-        
+        }        
         App::getRouter()->redirectTo("home");
     }
 }

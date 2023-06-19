@@ -42,19 +42,19 @@
                 <a class="nav-link" href=""></a>
             </li>
             
+            
+
+            
             <li class="nav-item">
-                <button type="button" class="btn btn-success">Zarejestruj</button>
+                <a type="button" class="btn btn-success" href = "{url action='register'}" >Zarejestruj</a>
             </li>
             
             
         {/if}
-        
-        
-
     </ul>
         
 
-       
+    
     </div>
   </div>
 </nav>

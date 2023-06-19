@@ -72,7 +72,17 @@ class Category {
             if(sizeof($this->categoryData)==0)
                 return false;
             
-            $this->threads = App::getDB()->select("thread", ["idthread","topic","creation_date","update_date","category_id","message_count","user_id"],
+            $this->threads = App::getDB()->select("thread", 
+                    ["[>]user"=>["user_id"=>"iduser"]],
+                    [
+                        "idthread",
+                        "topic",
+                        "creation_date",
+                        "update_date",
+                        "category_id",
+                        "message_count",
+                        "username"
+                    ],
             [
                 "category_id"=> $this->categoryName,
             ]);

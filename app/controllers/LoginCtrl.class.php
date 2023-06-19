@@ -93,6 +93,11 @@ class LoginCtrl {
     public function action_loginValidate() {
 
         if($this->validateLoginParams()){
+            
+            App::getMessages()->clear();
+            Utils::addInfoMessage("Logowanie zakończone sukcesem :>");
+            SessionUtils::storeMessages();
+            
             App::getRouter()->redirectTo("home");
         }
         else{
@@ -112,7 +117,7 @@ class LoginCtrl {
     
     public function action_logout(){
         session_destroy();
-        App::getRouter()->redirectTo("categories");
+        App::getRouter()->redirectTo("home");
     }
     
     

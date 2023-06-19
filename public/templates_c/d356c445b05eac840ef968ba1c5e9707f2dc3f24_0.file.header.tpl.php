@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-05 15:35:21
+/* Smarty version 4.3.0, created on 2023-06-19 10:59:05
   from 'E:\XAMPP\htdocs\projekt\app\views\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_647de49921ebb7_94028147',
+  'unifunc' => 'content_649018d9ae6386_82887869',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd356c445b05eac840ef968ba1c5e9707f2dc3f24' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\header.tpl',
-      1 => 1685972117,
+      1 => 1687165144,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647de49921ebb7_94028147 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649018d9ae6386_82887869 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom " style="border-bottom: 2px var(--bs-border-style) grey !important">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'home'),$_smarty_tpl ) );?>
@@ -68,19 +68,20 @@ function content_647de49921ebb7_94028147 (Smarty_Internal_Template $_smarty_tpl)
                 <a class="nav-link" href=""></a>
             </li>
             
+            
+
+            
             <li class="nav-item">
-                <button type="button" class="btn btn-success">Zarejestruj</button>
+                <a type="button" class="btn btn-success" href = "<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'register'),$_smarty_tpl ) );?>
+" >Zarejestruj</a>
             </li>
             
             
         <?php }?>
-        
-        
-
     </ul>
         
 
-       
+    
     </div>
   </div>
 </nav><?php }

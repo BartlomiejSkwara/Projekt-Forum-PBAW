@@ -8,8 +8,11 @@ App::getRouter()->setLoginRoute('login'); #action to forward if no permissions
 
 Utils::addRoute('login', 'LoginCtrl');
 Utils::addRoute('loginValidate', 'LoginCtrl');
+
+Utils::addRoute('register', 'RegisterCtrl');
+Utils::addRoute('registerValidate', 'RegisterCtrl');
+
 Utils::addRoute('logout', 'LoginCtrl');
-Utils::addRoute('signup', 'LoginCtrl');
 
 
 Utils::addRoute('home', 'HomeCtrl');

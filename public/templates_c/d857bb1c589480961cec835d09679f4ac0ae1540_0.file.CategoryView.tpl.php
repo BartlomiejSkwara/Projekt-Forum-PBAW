@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-17 20:10:30
+/* Smarty version 4.3.0, created on 2023-06-18 20:39:09
   from 'E:\XAMPP\htdocs\projekt\app\views\CategoryView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_648df716278497_26737570',
+  'unifunc' => 'content_648f4f4db7f237_73584962',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd857bb1c589480961cec835d09679f4ac0ae1540' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\CategoryView.tpl',
-      1 => 1687025428,
+      1 => 1687113548,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_648df716278497_26737570 (Smarty_Internal_Template $_smarty_tpl) {
+function content_648f4f4db7f237_73584962 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1992305900648df71625d7f8_24198891', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_628006490648f4f4db55f01_98468736', "main");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "main"} */
-class Block_1992305900648df71625d7f8_24198891 extends Smarty_Internal_Block
+class Block_628006490648f4f4db55f01_98468736 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_1992305900648df71625d7f8_24198891',
+    0 => 'Block_628006490648f4f4db55f01_98468736',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -44,7 +44,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 <?php $_smarty_tpl->_subTemplateRender("file:components/messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
 
 
 <div class=" w-100 text-center ">
@@ -103,30 +102,36 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 
-<div class="list-group list-group-flush border-bottom   w-90 mx-auto">
+<div class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
 
     
     
     <?php
-$_smarty_tpl->tpl_vars['var'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? 2+1 - (0) : 0-(2)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
-if ($_smarty_tpl->tpl_vars['var']->total > 0) {
-for ($_smarty_tpl->tpl_vars['var']->value = 0, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
-$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration === 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration === $_smarty_tpl->tpl_vars['var']->total;?>
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['threads']->value, 'thread');
+$_smarty_tpl->tpl_vars['thread']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['thread']->value) {
+$_smarty_tpl->tpl_vars['thread']->do_else = false;
+?>
         <div class="py-3 row border-bottom">           
             <div class="col-lg-6 row">
-                <strong class="mb-1">Nazwa wątku.</strong>
-                <div class="col-8 mb-1 small ">Autor stworzył: 2023-06-17 <br>14:13:18</div>
+                <strong class="mb-1"><?php echo $_smarty_tpl->tpl_vars['thread']->value["topic"];?>
+</strong>
+                <div class="col-8 mb-1 small "><?php echo $_smarty_tpl->tpl_vars['thread']->value["username"];?>
+ rozpoczął: <?php echo $_smarty_tpl->tpl_vars['thread']->value["creation_date"];?>
+</div>
             </div>
             <div class="col-lg-6 row">
 
-                <div class="col-6 mb-1 small ">2023-06-17 <br>14:13:18</div>
-                <p class="col-4">21</p>
+                <div class="col-6 mb-1 small ">Aktywność: <?php echo $_smarty_tpl->tpl_vars['thread']->value["update_date"];?>
+ </div>
+                <div class="col-4 mb-l small">Wiadomości: <?php echo $_smarty_tpl->tpl_vars['thread']->value["message_count"];?>
+</div>
             </div>
 
         </div>   
-    <?php }
+    <?php
 }
-?>
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
  
 
 
@@ -135,8 +140,32 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
 
 
 
-
 </div>
+
+
+
+
+<nav class="mx-auto mt-3 align-self-end" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>    
+
+
+    
+    
 <?php
 }
 }

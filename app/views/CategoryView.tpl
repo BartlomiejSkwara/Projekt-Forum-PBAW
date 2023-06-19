@@ -3,7 +3,6 @@
 {include file="components/messages.tpl"}
 
 
-
 <div class=" w-100 text-center ">
     <h1 class ="mx-auto">
         Witamy w kategorii<br>
@@ -60,7 +59,7 @@
 
 
 
-<div class="list-group list-group-flush border-bottom   w-90 mx-auto">
+<div class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
 {*      <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
     <div class="d-flex w-100 align-items-center justify-content-between">
       <strong class="mb-1">List group item heading</strong>
@@ -73,20 +72,20 @@
 
     
     
-    {for $var=0 to 2}
+    {foreach $threads as $thread}
         <div class="py-3 row border-bottom">           
             <div class="col-lg-6 row">
-                <strong class="mb-1">Nazwa wątku.</strong>
-                <div class="col-8 mb-1 small ">Autor stworzył: 2023-06-17 <br>14:13:18</div>
+                <strong class="mb-1">{$thread["topic"]}</strong>
+                <div class="col-8 mb-1 small ">{$thread["username"]} rozpoczął: {$thread["creation_date"]}</div>
             </div>
             <div class="col-lg-6 row">
 
-                <div class="col-6 mb-1 small ">2023-06-17 <br>14:13:18</div>
-                <p class="col-4">21</p>
+                <div class="col-6 mb-1 small ">Aktywność: {$thread["update_date"]} </div>
+                <div class="col-4 mb-l small">Wiadomości: {$thread["message_count"]}</div>
             </div>
 
         </div>   
-    {/for}
+    {/foreach}
  
 
 
@@ -95,6 +94,30 @@
 
 
 
-
 </div>
+
+
+
+
+<nav class="mx-auto mt-3 align-self-end" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>    
+
+
+    
+    
 {/block}

@@ -20,7 +20,10 @@ body {
     width: 90%!important;
 }
 
-
+.no-scroll {
+  resize: none;
+  overflow: hidden;
+}
 
 .start-75 {
     left: 75%!important;

@@ -9,6 +9,7 @@ namespace app\controllers;
 
 use core\App;
 use core\Utils;
+use core\SessionUtils;
 
 /**
  * Description of CategoriesCtrl
@@ -40,6 +41,8 @@ class HomeCtrl {
     }
     public function action_home(){
         $this->getDataFromDB();
+        SessionUtils::loadMessages();
+
         App::getSmarty()->assign("categories", $this->categories);
         App::getSmarty()->display("Home.tpl");
         

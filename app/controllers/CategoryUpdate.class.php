@@ -10,6 +10,8 @@ use core\Validator;
 use app\forms\CategoryEditForm;
 use core\App;
 use core\Utils;
+use core\SessionUtils;
+
 /**
  * Description of CategoryUpdate
  *
@@ -112,7 +114,7 @@ class CategoryUpdate {
             'min_length' => 1,
             'max_length' => 45, 
             'validator_message' => 'Wartość podana w polu "Nazwa Kategorii" jest nieprawidłowa sprawdź czy nie użyłeś jednego z tych znaków: " \' & < > ', 
-            'regexp' => '/^(?!.*["\'<>\x5C\x2F]|.*&#38;).*$/',
+            'regexp' => '/^(?!.*["\'<>\x5C\x2F]|.*&#(?:34|38|39|60|62);).*$/',
             'regexp_message' => 'Wartość w polu "Nazwa Kategorii" zawiera jeden z zakazanych znaków: " \' & < > \ /',
             ]         
         );
@@ -125,7 +127,7 @@ class CategoryUpdate {
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
             'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa',
-            'regexp' => '/^(?!.*["\'<>]|.*&#38;).*$/',
+            'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
             'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );
@@ -150,6 +152,9 @@ class CategoryUpdate {
                         "idcategory" => $this->urlID,
                     ]
                 );
+                App::getMessages()->clear();
+                Utils::addInfoMessage("Edycja kategorii zakończona sukcesem :>");
+                SessionUtils::storeMessages();
                 
                 App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {

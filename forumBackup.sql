@@ -105,9 +105,9 @@ CREATE TABLE `thread` (
 
 CREATE TABLE `user` (
   `iduser` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL UNIQUE,
   `password` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL UNIQUE,
   `role` varchar(20) NOT NULL,
   `creation_data` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

@@ -1,43 +1,44 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-17 18:45:46
+/* Smarty version 4.3.0, created on 2023-06-19 15:46:08
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_648de33a9ee757_01998959',
+  'unifunc' => 'content_64905c20c763a5_05107633',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1687020342,
+      1 => 1687182367,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_648de33a9ee757_01998959 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64905c20c763a5_05107633 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_756471511648de33a9c5ed0_15362201', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_98820086564905c20c48e41_63302278', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_756471511648de33a9c5ed0_15362201 extends Smarty_Internal_Block
+class Block_98820086564905c20c48e41_63302278 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_756471511648de33a9c5ed0_15362201',
+    0 => 'Block_98820086564905c20c48e41_63302278',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -45,7 +46,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     
   
-    
+
 
 <div class="px-4 py-5 mx-auto  my-5 text-center">
   <img class="d-block  mx-auto mb-4" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
@@ -57,8 +58,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
           Duis tempor justo nisl, sed feugiat massa suscipit at. Etiam non placerat nulla. Aliquam euismod odio vitae est imperdiet facilisis. 
           Proin sollicitudin metus in neque semper, et consequat ipsum consequat. Ut nec pellentesque leo. Quisque aliquet turpis quis metus pretium venenatis. 
           Aliquam cursus justo sapien, vitae laoreet augue tincidunt quis. Vivamus massa est, accumsan in ipsum sit amet, finibus elementum justo. 
-          Nam erat tellus, commodo at justo eget, molestie ultrices erat. Sed quis ultrices velit. Cras tempor massa volutpat dapibus pretium. Ut id felis ac nisl maximus rhoncus.
-          Vivamus nulla erat, rhoncus vitae nunc elementum, elementum rhoncus odio. Etiam quis felis risus. Nulla ultrices porttitor rhoncus.
       </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
@@ -67,7 +66,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   </div>
 </div>
         
-
+<div class= "text-center mb-auto  mx-auto dark ">
+    <?php $_smarty_tpl->_subTemplateRender("file:components/messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>  
+</div>    
+        
+    
             
             
 

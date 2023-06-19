@@ -3,7 +3,7 @@
 {block name = "main"}
     
   
-    
+
 
 <div class="px-4 py-5 mx-auto  my-5 text-center">
   <img class="d-block  mx-auto mb-4" src="{url}/resources/yuumsideview.svg" alt="" width="72" height="57">
@@ -14,8 +14,6 @@
           Duis tempor justo nisl, sed feugiat massa suscipit at. Etiam non placerat nulla. Aliquam euismod odio vitae est imperdiet facilisis. 
           Proin sollicitudin metus in neque semper, et consequat ipsum consequat. Ut nec pellentesque leo. Quisque aliquet turpis quis metus pretium venenatis. 
           Aliquam cursus justo sapien, vitae laoreet augue tincidunt quis. Vivamus massa est, accumsan in ipsum sit amet, finibus elementum justo. 
-          Nam erat tellus, commodo at justo eget, molestie ultrices erat. Sed quis ultrices velit. Cras tempor massa volutpat dapibus pretium. Ut id felis ac nisl maximus rhoncus.
-          Vivamus nulla erat, rhoncus vitae nunc elementum, elementum rhoncus odio. Etiam quis felis risus. Nulla ultrices porttitor rhoncus.
       </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
@@ -24,7 +22,11 @@
   </div>
 </div>
         
-
+<div class= "text-center mb-auto  mx-auto dark ">
+    {include file="components/messages.tpl"}  
+</div>    
+        
+    
             
             
 

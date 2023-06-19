@@ -31,7 +31,7 @@
             
             <div class="mx-auto mb-3 " style="width: 21rem;">
                 <label for="categoryDescription" class="form-label">Opis Kategorii</label>
-                <textarea class="form-control" name="categoryDescription" id="categoryDescription" maxlength="90" aria-describedby="categoryDescriptionHelp" rows="3">{strip}
+                <textarea class="form-control  no-scroll" name="categoryDescription" id="categoryDescription" maxlength="90" aria-describedby="categoryDescriptionHelp" rows="3">{strip}
                     {if isset($lastValues->description)}
                             {$lastValues->description}
                     {else if isset($category["description"])}
