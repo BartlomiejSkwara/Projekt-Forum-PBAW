@@ -18,16 +18,14 @@ Utils::addRoute('logout', 'LoginCtrl');
 Utils::addRoute('home', 'HomeCtrl');
 Utils::addRoute('fatalError', 'FatalError');
 
-
+//CRUD dla kategorii
 Utils::addRoute('editCategory', 'CategoryUpdate',['admin']);
 Utils::addRoute('editCategoryView', 'CategoryUpdate',['admin']);
 Utils::addRoute('deleteCategory', 'CategoryCD',['admin']);
 Utils::addRoute('addCategory', 'CategoryCD',['admin']);
 Utils::addRoute('addCategoryView', 'CategoryCD',['admin']);
-
-
-
 Utils::addRoute('category', 'Category');
+Utils::addRoute('categoryFilterThreadList', 'Category');
 
 //Utils::addRoute('thread', 'threadCtrl');
 

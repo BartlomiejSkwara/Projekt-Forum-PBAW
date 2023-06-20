@@ -111,5 +111,5 @@
         
     
 
-<script src="{$conf->app_url}/js/homeModalsStuff.js"></script>
+<script src="{$conf->app_url}/js/myJS/homeModalsStuff.js"></script>
 {/block}

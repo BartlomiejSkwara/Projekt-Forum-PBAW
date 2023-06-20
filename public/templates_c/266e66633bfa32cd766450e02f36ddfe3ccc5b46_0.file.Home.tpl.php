@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-19 15:46:08
+/* Smarty version 4.3.0, created on 2023-06-20 16:12:14
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64905c20c763a5_05107633',
+  'unifunc' => 'content_6491b3beef12b7_84747740',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1687182367,
+      1 => 1687268363,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_64905c20c763a5_05107633 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6491b3beef12b7_84747740 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_98820086564905c20c48e41_63302278', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13217849816491b3beec0f92_01128144', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_98820086564905c20c48e41_63302278 extends Smarty_Internal_Block
+class Block_13217849816491b3beec0f92_01128144 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_98820086564905c20c48e41_63302278',
+    0 => 'Block_13217849816491b3beec0f92_01128144',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -176,7 +176,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/js/homeModalsStuff.js"><?php echo '</script'; ?>
+/js/myJS/homeModalsStuff.js"><?php echo '</script'; ?>
 >
 <?php
 }

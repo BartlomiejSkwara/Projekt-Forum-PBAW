@@ -25,30 +25,38 @@
 
 <div style="">
   <div class="collapse" id="collapseFilter">
-    <div class="card card-body ju" >
+    <div class="text-center card card-body ju" >
         
- 
-        <label for="sortBy" class = "mx-auto mb-2"><h5>Sortuj Według</h5></label>
-        <div id="sortBy" class="btn-group" role="group" aria-label="Type sortowania">
-            <input type="radio" class="btn-check " name="sortBy" id="btnradio1Alf" autocomplete="off"    {if false }checked{/if}>
-            <label class="btn btn-outline-primary" for="btnradio1Alf">Alfabetycznie</label>
+        <form id="filter-form" onsubmit="ajaxPostForm('filter-form','{$conf->action_root}categoryFilterThreadList/{$categoryData["idCategory"]}','threadlist'); return false;">
+{*        <form action="{url action='sus23'}" method="post" >*} 
+           <label for="sortBy" class = " mb-2"><h5>Sortuj Według</h5></label>
+            <select name="sortBy" id="sortBy" class="form-select w-50 mx-auto " aria-label="Typ sortowania">
+                <option value="update_date" {if true }checked {/if}>Ostatnia aktywność</option>
+                <option value="creation_date" {if false }checked {/if}>Data powstania</option>
+                <option value="message_count" {if false }checked {/if}>Ilość Wiadomości</option>
+                <option value="topic" {if false  }selected{/if}>Alfabetycznie</option>
 
-            <input type="radio" class="btn-check" name="sortBy" id="btnradio2DP" autocomplete="off"    {if false}checked{/if} >
-            <label class="btn btn-outline-primary" for="btnradio2DP">Data powstania</label>
+            </select>
 
-            <input type="radio" class="btn-check" name="sortBy" id="btnradio3OZ" autocomplete="off"     {if true }checked{/if}>
-            <label class="btn btn-outline-primary" for="btnradio3OZ">Ostatnia zmiana</label>
-        </div>
-        
-        <label for="sortDirection" class = "mx-auto mb-2 mt-3"><h5>Typ Sortowania</h5></label>
-        <div id="sortDirection" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check " name="sortDirection" id="btnradio1ROS" autocomplete="off"    {if true }checked{/if}>
-            <label class="btn btn-outline-primary" for="btnradio1ROS">Rosnąco</label>
 
-            <input type="radio" class="btn-check " name="sortDirection" id="btnradio2MAL" autocomplete="off"    {if false}checked{/if} >
-            <label class="btn btn-outline-primary" for="btnradio2MAL">Malejąco</label>
-        </div>
-        
+            <label for="sortDirection" class = "mb-2 mt-3"><h5>Typ Sortowania</h5></label>
+            <br>
+            <div id="sortDirection" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                
+                <input type="radio" class="btn-check " name="sortDirection" id="btnradio2MAL" autocomplete="off"    {if true}checked{/if} value="DESC">
+                <label class="btn btn-outline-primary" for="btnradio2MAL">Malejąco</label>
+                
+                <input type="radio" class="btn-check " name="sortDirection" id="btnradio1ROS" autocomplete="off"    {if false}checked{/if}value="ASC">
+                <label class="btn btn-outline-primary" for="btnradio1ROS">Rosnąco</label>
+
+
+            </div>
+            <br>
+            <label for="filter" class = "mb-2 mt-3 "><h5>Filtr nazwy</h5></label>
+            <input type="text" class="form-control w-50 mx-auto" name='filter' maxlength="45" id="filter" placeholder="Filtr">
+           
+            <button class="mt-3 btn btn-lg btn-primary" type="submit">Szukaj</button>
+        </form>
         
     </div>
   </div>
@@ -59,7 +67,7 @@
 
 
 
-<div class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
+<div id="threadlist" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
 {*      <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
     <div class="d-flex w-100 align-items-center justify-content-between">
       <strong class="mb-1">List group item heading</strong>
@@ -70,28 +78,7 @@
 
     *}
 
-    
-    
-    {foreach $threads as $thread}
-        <div class="py-3 row border-bottom">           
-            <div class="col-lg-6 row">
-                <strong class="mb-1">{$thread["topic"]}</strong>
-                <div class="col-8 mb-1 small ">{$thread["username"]} rozpoczął: {$thread["creation_date"]}</div>
-            </div>
-            <div class="col-lg-6 row">
-
-                <div class="col-6 mb-1 small ">Aktywność: {$thread["update_date"]} </div>
-                <div class="col-4 mb-l small">Wiadomości: {$thread["message_count"]}</div>
-            </div>
-
-        </div>   
-    {/foreach}
- 
-
-
-
-
-
+{include file="components/threadlist.tpl"}
 
 
 </div>
@@ -119,5 +106,5 @@
 
 
     
-    
+<script src="{$conf->app_url}/js/myJS/functions.js"></script>
 {/block}

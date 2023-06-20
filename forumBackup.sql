@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Cze 2023, 12:11
--- Wersja serwera: 10.4.27-MariaDB
--- Wersja PHP: 8.2.0
+-- Generation Time: Jun 19, 2023 at 08:25 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `forum`
+-- Database: `forum`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `bookmark`
+-- Table structure for table `bookmark`
 --
 
 CREATE TABLE `bookmark` (
@@ -35,7 +35,7 @@ CREATE TABLE `bookmark` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -45,18 +45,20 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Zrzut danych tabeli `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`idcategory`, `name`, `description`) VALUES
-('adssda---s---s', 'adssda   s   s', 's&#13;&#10;&#13;&#10;&#13;&#10;s'),
+('filmy-i-seriale', 'Filmy i Seriale', '\\x26sdad'),
+('kuchnia', 'Kuchnia', 'mniam mniam mniam'),
+('literatura', 'Literatura', 'bla bla bla'),
 ('muzyka-i-sztuka-itp', 'Muzyka i Sztuka itp', 'Tutaj może porozmawiać z innymi o wszelkich utworach i dziełachs&#13;&#10;s&#13;&#10;'),
-('sa23', 'sa23', '\\x26sdad');
+('podroze', 'Podróże', 's&#13;&#10;&#13;&#10;s');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `message`
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
@@ -70,7 +72,7 @@ CREATE TABLE `message` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `private_message`
+-- Table structure for table `private_message`
 --
 
 CREATE TABLE `private_message` (
@@ -84,7 +86,7 @@ CREATE TABLE `private_message` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `thread`
+-- Table structure for table `thread`
 --
 
 CREATE TABLE `thread` (
@@ -97,48 +99,95 @@ CREATE TABLE `thread` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `thread`
+--
+
+INSERT INTO `thread` (`idthread`, `topic`, `creation_date`, `update_date`, `category_id`, `message_count`, `user_id`) VALUES
+(1, 'Gloryhammer nowy album', '2023-06-17 14:13:18', '2023-06-17 14:13:18', 'muzyka-i-sztuka-itp', 0, 2),
+(2, 'Co sądzicie o breakcore, czy można jeszcze na', '2023-06-18 19:28:31', '2023-06-18 19:28:31', 'muzyka-i-sztuka-itp', 0, 1),
+(3, 'Najnowszy singiel Arctic Monkeys', '2023-06-19 10:45:22', '2023-06-19 10:45:22', 'muzyka-i-sztuka-itp', 0, 3),
+(4, 'Ostatnia wystawa malarstwa abstrakcyjnego', '2023-06-19 16:57:10', '2023-06-19 16:57:10', 'muzyka-i-sztuka-itp', 0, 4),
+(5, 'Recital pianistyczny Chopina', '2023-06-19 20:12:45', '2023-06-19 20:12:45', 'muzyka-i-sztuka-itp', 0, 5),
+(6, 'Najlepsze miejsca do zwiedzania w Paryżu', '2023-06-20 09:23:14', '2023-06-20 09:23:14', 'podroze', 0, 2),
+(7, 'Filmowe premiery tego miesiąca', '2023-06-20 14:45:29', '2023-06-20 14:45:29', 'filmy-i-seriale', 0, 1),
+(8, 'Co sądzicie o teatrze eksperymentalnym?', '2023-06-21 11:36:08', '2023-06-21 11:36:08', 'muzyka-i-sztuka-itp', 0, 3),
+(9, 'Najlepsze książki fantasy ostatnich lat', '2023-06-21 18:09:52', '2023-06-21 18:09:52', 'literatura', 0, 4),
+(10, 'Najnowszy album Ed Sheeran', '2023-06-22 15:28:07', '2023-06-22 15:28:07', 'muzyka-i-sztuka-itp', 0, 5),
+(11, 'Najlepsze plaże na Costa Brava', '2023-06-23 10:55:41', '2023-06-23 10:55:41', 'podroze', 0, 2),
+(12, 'Nowy sezon serialu \"The Witcher\"', '2023-06-23 16:40:19', '2023-06-23 16:40:19', 'filmy-i-seriale', 0, 1),
+(13, 'Sztuka uliczna w Nowym Jorku', '2023-06-24 13:15:56', '2023-06-24 13:15:56', 'muzyka-i-sztuka-itp', 0, 3),
+(14, 'Najlepsze powieści kryminalne', '2023-06-24 19:57:34', '2023-06-24 19:57:34', 'literatura', 0, 4),
+(15, 'Koncert Beyoncé w Madison Square Garden', '2023-06-25 17:30:21', '2023-06-25 17:30:21', 'muzyka-i-sztuka-itp', 0, 5),
+(16, 'Najpiękniejsze zamki w Europie', '2023-06-26 12:48:56', '2023-06-26 12:48:56', 'podroze', 0, 2),
+(17, 'Najlepsze seriale dramatyczne', '2023-06-26 18:22:42', '2023-06-26 18:22:42', 'filmy-i-seriale', 0, 1),
+(18, 'Wystawa sztuki współczesnej w Muzeum Guggenhe', '2023-06-27 15:39:18', '2023-06-27 15:39:18', 'muzyka-i-sztuka-itp', 0, 3),
+(19, 'Najlepsze powieści science fiction', '2023-06-27 21:11:59', '2023-06-27 21:11:59', 'literatura', 0, 4),
+(20, 'Koncert Coldplay w Londynie', '2023-06-28 17:56:33', '2023-06-28 17:56:33', 'muzyka-i-sztuka-itp', 0, 5),
+(21, 'Wyprawa w góry Alpy', '2023-06-29 14:27:19', '2023-06-29 14:27:19', 'podróże', 0, 2),
+(22, 'Nowy sezon serialu \"Breaking Bad\"', '2023-06-29 20:08:45', '2023-06-29 20:08:45', 'filmy-i-seriale', 0, 1),
+(23, 'Wystawa fotografii Anselma Adamsa', '2023-06-30 16:40:22', '2023-06-30 16:40:22', 'muzyka-i-sztuka-itp', 0, 3),
+(24, 'Najlepsze thrillery psychologiczne', '2023-06-30 22:15:09', '2023-06-30 22:15:09', 'literatura', 0, 4),
+(25, 'Koncert Taylor Swift w Staples Center', '2023-07-01 19:08:37', '2023-07-01 19:08:37', 'muzyka-i-sztuka-itp', 0, 5),
+(26, 'Najlepsze przepisy kulinarne z całego świata', '2023-07-02 15:51:24', '2023-07-02 15:51:24', 'kuchnia', 0, 2),
+(27, 'Ranking najlepszych filmów komediowych', '2023-07-02 21:37:59', '2023-07-02 21:37:59', 'filmy-i-seriale', 0, 1),
+(28, 'Wystawa malarstwa renesansowego w Luwrze', '2023-07-03 17:59:08', '2023-07-03 17:59:08', 'muzyka-i-sztuka-itp', 0, 3),
+(29, 'Najlepsze powieści romantyczne', '2023-07-03 23:44:56', '2023-07-03 23:44:56', 'literatura', 0, 4),
+(30, 'Koncert Metallica w Berlinie', '2023-07-04 19:36:22', '2023-07-04 19:36:22', 'muzyka-i-sztuka-itp', 0, 5),
+(31, 'Najpiękniejsze plaże na Hawajach', '2023-07-05 16:28:47', '2023-07-05 16:28:47', 'podróże', 0, 2),
+(32, 'Nowy sezon serialu \"Friends\"', '2023-07-05 22:13:14', '2023-07-05 22:13:14', 'filmy-i-seriale', 0, 1),
+(33, 'Wystawa rzeźby współczesnej w Tate Modern', '2023-07-06 18:55:39', '2023-07-06 18:55:39', 'muzyka-i-sztuka-itp', 0, 3),
+(34, 'Najlepsze powieści detektywistyczne', '2023-07-06 23:40:17', '2023-07-06 23:40:17', 'literatura', 0, 4),
+(35, 'Koncert Adele w Sydney Opera House', '2023-07-07 20:33:41', '2023-07-07 20:33:41', 'muzyka', 0, 5);
+
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `iduser` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL UNIQUE,
+  `username` varchar(20) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL UNIQUE,
+  `email` varchar(45) NOT NULL,
   `role` varchar(20) NOT NULL,
   `creation_data` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Zrzut danych tabeli `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`iduser`, `username`, `password`, `email`, `role`, `creation_data`) VALUES
 (1, 'admin', 'admin', 'admin@interia.pl', 'admin', '2023-05-21 13:00:28'),
-(2, 'Krisent', '123', 'krisent@gmail.com', 'user', '2023-05-21 13:01:37');
+(2, 'Krisent', '123', 'krisent@gmail.com', 'user', '2023-05-21 13:01:37'),
+(3, 'Wilbur Redpot', '1234567890', 'will@gmail.com', 'user', '0000-00-00 00:00:00'),
+(4, 'Fannybaws', 'on1therun(form', 'yarharhar@interia.pl', 'user', '0000-00-00 00:00:00'),
+(5, 'sus69', '1234567890', 'sus@gmail.com', 'user', '2023-06-19 15:32:07'),
+(26, 'kolejny', '1234567890/sus\\', 'kolejny@gmail.com', 'user', '0000-00-00 00:00:00'),
+(30, 'dsadsa', '2132123131231', 'assdmin@interia.pl', 'user', '2023-06-19 15:15:08'),
+(31, 'sdasadsadsa', '13222222222CXZXCZXCZ', 'sa@ds.pl', 'user', '2023-06-19 15:28:23');
 
 --
--- Indeksy dla zrzutów tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksy dla tabeli `bookmark`
+-- Indexes for table `bookmark`
 --
 ALTER TABLE `bookmark`
   ADD KEY `fk_bookmark_user1_idx` (`user_id`),
   ADD KEY `fk_bookmark_message1_idx` (`message_id`);
 
 --
--- Indeksy dla tabeli `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`idcategory`);
 
 --
--- Indeksy dla tabeli `message`
+-- Indexes for table `message`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`idmessage`),
@@ -146,7 +195,7 @@ ALTER TABLE `message`
   ADD KEY `fk_message_user1_idx` (`user_id`);
 
 --
--- Indeksy dla tabeli `private_message`
+-- Indexes for table `private_message`
 --
 ALTER TABLE `private_message`
   ADD PRIMARY KEY (`idmessage`),
@@ -154,7 +203,7 @@ ALTER TABLE `private_message`
   ADD KEY `fk_private_message_user1_idx` (`receiver_id`);
 
 --
--- Indeksy dla tabeli `thread`
+-- Indexes for table `thread`
 --
 ALTER TABLE `thread`
   ADD PRIMARY KEY (`idthread`),
@@ -162,67 +211,69 @@ ALTER TABLE `thread`
   ADD KEY `fk_thread_user1_idx` (`user_id`);
 
 --
--- Indeksy dla tabeli `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`iduser`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `username_2` (`username`,`email`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `message`
+-- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
   MODIFY `idmessage` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `private_message`
+-- AUTO_INCREMENT for table `private_message`
 --
 ALTER TABLE `private_message`
   MODIFY `idmessage` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `thread`
+-- AUTO_INCREMENT for table `thread`
 --
 ALTER TABLE `thread`
-  MODIFY `idthread` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idthread` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT dla tabeli `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- Ograniczenia dla zrzutów tabel
+-- Constraints for dumped tables
 --
 
 --
--- Ograniczenia dla tabeli `bookmark`
+-- Constraints for table `bookmark`
 --
 ALTER TABLE `bookmark`
   ADD CONSTRAINT `fk_bookmark_message1` FOREIGN KEY (`message_id`) REFERENCES `message` (`idmessage`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_bookmark_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ograniczenia dla tabeli `message`
+-- Constraints for table `message`
 --
 ALTER TABLE `message`
   ADD CONSTRAINT `fk_message_thread1` FOREIGN KEY (`thread_id`) REFERENCES `thread` (`idthread`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_message_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ograniczenia dla tabeli `private_message`
+-- Constraints for table `private_message`
 --
 ALTER TABLE `private_message`
   ADD CONSTRAINT `fk_message_user10` FOREIGN KEY (`sender_id`) REFERENCES `user` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_private_message_user1` FOREIGN KEY (`receiver_id`) REFERENCES `user` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ograniczenia dla tabeli `thread`
+-- Constraints for table `thread`
 --
 ALTER TABLE `thread`
   ADD CONSTRAINT `fk_thread_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`idcategory`) ON DELETE CASCADE ON UPDATE CASCADE,

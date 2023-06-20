@@ -154,4 +154,7 @@ class CategoryCD {
         }        
         App::getRouter()->redirectTo("home");
     }
+    
+    
+    
 }
