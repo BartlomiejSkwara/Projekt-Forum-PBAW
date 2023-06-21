@@ -1,6 +1,7 @@
 <?php namespace core;
 class Config extends \ArrayObject{
 	public $debug=false;
+        public $illegalSymbolsRegex = '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/';
 	public $clean_urls=false;
 	public $root_path;
 	public $server_name;

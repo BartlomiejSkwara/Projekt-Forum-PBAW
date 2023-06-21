@@ -127,7 +127,7 @@ class CategoryUpdate {
             'required_message' => 'Nie wypełniono pola "Opis Kategorii"',
             'max_length' => 90, 
             'validator_message' => 'Wartość podana w polu "Opis Kategorii" jest nieprawidłowa',
-            'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
+            'regexp' => App::getConf()->illegalSymbolsRegex,
             'regexp_message' => 'Wartość w polu "Opis Kategorii" zawiera jeden z zakazanych znaków: " \' & < > ',
             ]         
         );

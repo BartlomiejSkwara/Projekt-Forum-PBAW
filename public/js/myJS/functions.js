@@ -10,11 +10,23 @@ function confirmLink(link,message) {
 
 // Funkcja wysyłająca dane formularza identyfkowanego przez 'id_form', do podanego adresu 'url'.
 // Otrzymana odpowiedź zamienia zawartość elementu na stronie o identyfikatorze 'id_to_reload'.
-function ajaxPostForm(id_form,url,id_to_reload)
+function ajaxPostFormPagination(id_form,url,id_to_reload)
 {
     
     var form = document.getElementById(id_form);
     var formData = new FormData(form); 
+    
+    
+    var submitButton = event.submitter;
+    if (submitButton) {
+      var filterValue = submitButton.value;
+      if(filterValue==null)
+      {
+          filterValue=0;
+      }
+      formData.append('page', filterValue);
+    }
+    
     var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
 		if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
@@ -24,6 +36,28 @@ function ajaxPostForm(id_form,url,id_to_reload)
     xmlHttp.open("POST", url, true); 
     xmlHttp.send(formData); 
 }
+
+
+
+function ajaxPostForm(id_form,url,id_to_reload)
+{
+    
+    var form = document.getElementById(id_form);
+    var formData = new FormData(form); 
+    
+   
+    var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onreadystatechange = function() {
+		if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+			document.getElementById(id_to_reload).innerHTML = xmlHttp.responseText;
+		}
+	}
+    xmlHttp.open("POST", url, true); 
+    xmlHttp.send(formData); 
+}
+
+
+
 
 // Funkcja wysyłająca dane formularza identyfkowanego przez 'id_form', do podanego adresu 'url'.
 // Po otrzymaniu odpowiedzi wywoływana jest funkcja użytkownika podana jako 'user_function'.

@@ -53,6 +53,7 @@ INSERT INTO `category` (`idcategory`, `name`, `description`) VALUES
 ('kuchnia', 'Kuchnia', 'mniam mniam mniam'),
 ('literatura', 'Literatura', 'bla bla bla'),
 ('muzyka-i-sztuka-itp', 'Muzyka i Sztuka itp', 'Tutaj może porozmawiać z innymi o wszelkich utworach i dziełachs&#13;&#10;s&#13;&#10;'),
+('nauka-i-technologia', 'Nauka i Technologia', 'bla bla bla'),
 ('podroze', 'Podróże', 's&#13;&#10;&#13;&#10;s');
 
 -- --------------------------------------------------------
@@ -139,6 +140,26 @@ INSERT INTO `thread` (`idthread`, `topic`, `creation_date`, `update_date`, `cate
 (33, 'Wystawa rzeźby współczesnej w Tate Modern', '2023-07-06 18:55:39', '2023-07-06 18:55:39', 'muzyka-i-sztuka-itp', 0, 3),
 (34, 'Najlepsze powieści detektywistyczne', '2023-07-06 23:40:17', '2023-07-06 23:40:17', 'literatura', 0, 4),
 (35, 'Koncert Adele w Sydney Opera House', '2023-07-07 20:33:41', '2023-07-07 20:33:41', 'muzyka', 0, 5);
+(36, 'Najlepsze miejsca na kemping', '2023-07-02 15:40:55', '2023-07-02 15:40:55', 'podroze', 0, 2),
+(37, 'Najlepsze filmy komediowe', '2023-07-02 21:17:33', '2023-07-02 21:17:33', 'filmy-i-seriale', 0, 1),
+(38, 'Nowa wystawa w Muzeum Historii Naturalnej', '2023-07-03 18:30:41', '2023-07-03 18:30:41', 'nauka-i-technologia', 0, 3),
+(39, 'Najlepsze powieści romantyczne', '2023-07-03 23:59:16', '2023-07-03 23:59:16', 'literatura', 0, 4),
+(40, 'Koncert Queen + Adam Lambert', '2023-07-04 20:45:29', '2023-07-04 20:45:29', 'muzyka-i-sztuka-itp', 0, 5),
+(41, 'Najlepsze miejsca na nurkowanie', '2023-07-05 17:30:52', '2023-07-05 17:30:52', 'podroze', 0, 2),
+(42, 'Najlepsze seriale fantasy', '2023-07-05 23:08:14', '2023-07-05 23:08:14', 'filmy-i-seriale', 0, 1),
+(43, 'Nowe odkrycia w dziedzinie kosmologii', '2023-07-06 19:56:27', '2023-07-06 19:56:27', 'nauka-i-technologia', 0, 3),
+(44, 'Najlepsze powieści historyczne', '2023-07-06 22:43:51', '2023-07-06 22:43:51', 'literatura', 0, 4),
+(45, 'Koncert Bruno Mars w MGM Grand Garden Arena', '2023-07-07 20:15:34', '2023-07-07 20:15:34', 'muzyka-i-sztuka-itp', 0, 5),
+(46, 'Najlepsze restauracje w Rzymie', '2023-07-02 16:53:15', '2023-07-02 16:53:15', 'kuchnia', 0, 2),
+(47, 'Ranking najlepszych filmów komediowych', '2023-07-02 22:41:09', '2023-07-02 22:41:09', 'filmy-i-seriale', 0, 1),
+(48, 'Wystawa rzeźby nowoczesnej w Tate Modern', '2023-07-03 18:29:56', '2023-07-03 18:29:56', 'muzyka-i-sztuka-itp', 0, 3),
+(49, 'Najlepsze powieści romantyczne', '2023-07-03 23:57:41', '2023-07-03 23:57:41', 'literatura', 0, 4),
+(50, 'Koncert Metallica w Madison Square Garden', '2023-07-04 20:14:32', '2023-07-04 20:14:32', 'muzyka-i-sztuka-itp', 0, 5),
+(51, 'Najlepsze miejsca do nurkowania na Karaibach', '2023-07-05 17:48:19', '2023-07-05 17:48:19', 'podroze', 0, 2),
+(52, 'Nowy sezon serialu "Friends"', '2023-07-05 23:35:06', '2023-07-05 23:35:06', 'filmy-i-seriale', 0, 1),
+(53, 'Wystawa malarstwa impresjonistycznego', '2023-07-06 19:22:53', '2023-07-06 19:22:53', 'muzyka-i-sztuka-itp', 0, 3),
+(54, 'Najlepsze powieści historyczne', '2023-07-06 23:59:38', '2023-07-06 23:59:38', 'literatura', 0, 4),
+(55, 'Koncert Beyoncé w Wembley Stadium', '2023-07-07 20:08:25', '2023-07-07 20:08:25', 'muzyka-i-sztuka-itp', 0, 5);
 
 -- --------------------------------------------------------
 

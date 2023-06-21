@@ -11,6 +11,7 @@ use core\Validator;
 use core\SessionUtils;
 use core\Utils;
 use app\forms\FilterParamsForm;
+use app\forms\PaginationData;
 
 /**
  * Description of Category
@@ -24,11 +25,18 @@ class Category {
     private $threads;
     private $validator;
     private $filterForm;
+    private $paginationData;
+    
+    private $resultsOnPage;
+
+
     public function __construct() {
         $this->threads = array();
         $this->categoryData = array();
         $this->filterForm = new FilterParamsForm();
         $this->validator = new Validator();
+        $this->paginationData = new PaginationData();
+        $this->resultsOnPage = 10;
     }
 
     private function validateCategoryView(){
@@ -47,23 +55,27 @@ class Category {
 
             ]
         );
-        //Brak podanej kategorii wracaj do home
         if(!$this->validator->isLastOK())
         {
-            //\core\SessionUtils::
-            //App::getSmarty()->assign("lol","sadsa");
-            //SessionUtils::loadMessages()
-            
-
-
             App::getRouter()->redirectTo("home");
-            //App::getSmarty()->assign("customError","serio ");
-            //App::getSmarty()->display("Home.tpl");
         }
         $this->categoryName = urldecode($this->categoryName);
 
+        $this->paginationData->currentPage = $this->validator->validateFromPost("page",
+            [ 
+            'int' => true,
+            'min' => 0
+            ]
+        );
+        if(!$this->validator->isLastSet()||!$this->validator->isLastOK())
+            $this->paginationData->currentPage=0;
+        
+
+        
     }
     
+  
+
     private function getThreadsFromDB(){
         try {
             
@@ -74,6 +86,13 @@ class Category {
             
             if(sizeof($this->categoryData)==0)
                 return false;
+            
+             $this->paginationData->setTotalResultsCount(App::getDB()->count("thread", 
+            [
+                "topic[~]" => $this->filterForm->filter,
+                "category_id"=> $this->categoryName,                
+            ])
+            , $this->resultsOnPage);
             
             $this->threads = App::getDB()->select("thread", 
                     ["[>]user"=>["user_id"=>"iduser"]],
@@ -93,9 +112,11 @@ class Category {
                 ],
                 "topic[~]" => $this->filterForm->filter,
                 "category_id"=> $this->categoryName,
+                "LIMIT"=>[0+$this->paginationData->currentPage* $this->resultsOnPage, $this->resultsOnPage]
+                
             ]);
             
-                    
+
         } 
         catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
@@ -113,10 +134,11 @@ class Category {
                 }
         }
         
-        
+
         return true;
     }
     private function validateFilterParams(){
+                
         
          
         $this->filterForm->column = $this->validator->validateFromPost("sortBy",
@@ -143,7 +165,7 @@ class Category {
             [ 
 
                 'max_length' => 45,
-                'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
+                'regexp' => App::getConf()->illegalSymbolsRegex,
                 'regexp_message' => 'Filtr nie może zawierać znaków specjalnych " \' & < > ',
                 
             ]
@@ -153,7 +175,7 @@ class Category {
             $this->filterForm->filter = "";
         }
         
-
+        
 
 
     }        
@@ -162,27 +184,34 @@ class Category {
     }
     
     public function action_categoryFilterThreadList(){
-         $this->sharedActionCode("components/threadlist.tpl");
+         if($this->sharedActionCode("components/threadlist.tpl")){
+             App::getSmarty()->display("components/paginationCategory.tpl");
+         }
     
     }
     
     private function sharedActionCode($tpl){
+        ///App::getMessages()->clear();
+
         $this->validateCategoryView();
         $this->validateFilterParams();
-        
         if($this->getThreadsFromDB())
         {
+            $this->paginationData->filter = $this->filterForm;
+            App::getSmarty()->assign("pagData", $this->paginationData);    
+            
             App::getSmarty()->assign("title", $this->categoryData[0]["name"]);
             App::getSmarty()->assign("categoryData", $this->categoryData[0]);
             App::getSmarty()->assign("threads", $this->threads);
             App::getSmarty()->display("components/messages.tpl");
 
             App::getSmarty()->display($tpl);
-
+            return true;
         }
         else{
             App::getSmarty()->assign("customError", "Nie odnaleziono kategorii<br><p class='text-primary'>".$this->categoryName."</p>");
             App::getSmarty()->display("FatalError.tpl");
+            return false;
         }
         
 

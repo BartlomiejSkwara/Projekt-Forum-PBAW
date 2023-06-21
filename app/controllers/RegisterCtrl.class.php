@@ -41,7 +41,7 @@ class RegisterCtrl {
                 'min_length' => 5,
                 'max_length' => 20,
                 'validator_message' => 'Podana wartość nie może być loginem, upewnij się że login ma przynajmniej 5 znaków',
-                'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
+                'regexp' => App::getConf()->illegalSymbolsRegex,
                 
                 'regexp_message' => 'Login zawiera jeden z zakazanych znaków " \' & < > ',
                 //'message_type' => error
@@ -59,7 +59,7 @@ class RegisterCtrl {
                 'min_length' => 10,
                 'max_length' => 45,
                 'validator_message' => 'Podana wartość nie może być hasłem, upewnij się że hasło ma przynajmniej 10 znaków',
-                'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
+                'regexp' => App::getConf()->illegalSymbolsRegex,
                 'regexp_message' => 'Hasło zawiera jeden z zakazanych znaków " \' & < > ',
                 //'message_type' => error
             ]
@@ -77,7 +77,7 @@ class RegisterCtrl {
                 'email' => true,
                 'max_length' => 45,
                 'validator_message' => 'Upewnij się że podana wartość to poprawny adres email',
-                'regexp' => '/^(?!.*["\'<>]|.*&#(?:34|38|39|60|62);).*$/',
+                'regexp' => App::getConf()->illegalSymbolsRegex,
                 'regexp_message' => 'Email zawiera jeden z zakazanych znaków " \' & < > ',
                 //'message_type' => error
             ]

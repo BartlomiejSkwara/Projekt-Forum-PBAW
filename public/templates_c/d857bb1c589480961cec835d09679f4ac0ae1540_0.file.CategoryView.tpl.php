@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-20 19:04:42
+/* Smarty version 4.3.0, created on 2023-06-21 16:49:01
   from 'E:\XAMPP\htdocs\projekt\app\views\CategoryView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6491dc2aa9c471_06846020',
+  'unifunc' => 'content_64930ddd0848e2_49001817',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd857bb1c589480961cec835d09679f4ac0ae1540' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\CategoryView.tpl',
-      1 => 1687280678,
+      1 => 1687358919,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:components/messages.tpl' => 1,
     'file:components/threadlist.tpl' => 1,
+    'file:components/paginationCategory.tpl' => 1,
   ),
 ),false)) {
-function content_6491dc2aa9c471_06846020 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64930ddd0848e2_49001817 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16775757156491dc2aa7be98_13371644', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44563779064930ddd061139_97145757', "main");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "main"} */
-class Block_16775757156491dc2aa7be98_13371644 extends Smarty_Internal_Block
+class Block_44563779064930ddd061139_97145757 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_16775757156491dc2aa7be98_13371644',
+    0 => 'Block_44563779064930ddd061139_97145757',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -58,12 +59,27 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </small>
     </h1>
  </div>
-
-<button class="btn btn-primary ms-auto border-primary-subtle  rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
-    <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+<div class = "d-flex flex-row-reverse">
+          
+    <button class="btn btn-primary border-primary-subtle  rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+        <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/icons/filter.svg" alt="" width="16" height="16"> 
-    <span class="visually-hidden">Filtrowanie</span>
-</button>
+        <span class="visually-hidden">Filtrowanie</span>
+    </button>
+    <?php if (\core\RoleUtils::inRole("user")) {?>
+        <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>'createThread'),$_smarty_tpl ) );?>
+">
+            <span class="btn btn-primary border-primary-subtle  rounded-pill">
+                <img class=" mx-auto " " src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
+/resources/icons/plus.svg" alt="" width="16" height="16" style="fill: red;"> 
+                <span class="visually-hidden">Dodaj kategorię</span>
+            </span>
+        </a>
+    <?php }?>
+    
+
+</div>   
+
 
 
 
@@ -74,7 +90,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <form id="filter-form" onsubmit="ajaxPostForm('filter-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->value["idCategory"];?>
 ','threadlist'); return false;">
- 
            <label for="sortBy" class = " mb-2"><h5>Sortuj Według</h5></label>
             <select name="sortBy" id="sortBy" class="form-select w-50 mx-auto " aria-label="Typ sortowania">
                 <option value="update_date" <?php if (true) {?>checked <?php }?>>Ostatnia aktywność</option>
@@ -89,10 +104,10 @@ categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->valu
             <br>
             <div id="sortDirection" class="btn-group" role="group" aria-label="Basic radio toggle button group">
                 
-                <input type="radio" class="btn-check " name="sortDirection" id="btnradio2MAL" autocomplete="off"    <?php if (true) {?>checked<?php }?> value="DESC">
+                <input type="radio" class="btn-check " name="sortDirection" id="btnradio2MAL" autocomplete="off"  checked value="DESC">
                 <label class="btn btn-outline-primary" for="btnradio2MAL">Malejąco</label>
                 
-                <input type="radio" class="btn-check " name="sortDirection" id="btnradio1ROS" autocomplete="off"    <?php if (false) {?>checked<?php }?>value="ASC">
+                <input type="radio" class="btn-check " name="sortDirection" id="btnradio1ROS" autocomplete="off"  value="ASC">
                 <label class="btn btn-outline-primary" for="btnradio1ROS">Rosnąco</label>
 
 
@@ -116,6 +131,7 @@ categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->valu
 <div id="threadlist" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
 
 <?php $_smarty_tpl->_subTemplateRender("file:components/threadlist.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:components/paginationCategory.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
@@ -124,23 +140,8 @@ categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->valu
 
 
 
-<nav class="mx-auto mt-3 align-self-end" aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>    
+
+
 
 
     

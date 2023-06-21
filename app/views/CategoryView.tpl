@@ -12,11 +12,32 @@
         <small class="h5 w-50">{$categoryData["description"]}</small>
     </h1>
  </div>
+<div class = "d-flex flex-row-reverse">
+          
+    <button class="btn btn-primary border-primary-subtle  rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+        <img class=" mx-auto " " src="{url}/resources/icons/filter.svg" alt="" width="16" height="16"> 
+        <span class="visually-hidden">Filtrowanie</span>
+    </button>
+    {if \core\RoleUtils::inRole("user")}
+        <a href="{url action='createThread'}">
+            <span class="btn btn-primary border-primary-subtle  rounded-pill">
+                <img class=" mx-auto " " src="{url}/resources/icons/plus.svg" alt="" width="16" height="16" style="fill: red;"> 
+                <span class="visually-hidden">Dodaj kategorię</span>
+            </span>
+        </a>
+    {/if}
+    
 
-<button class="btn btn-primary ms-auto border-primary-subtle  rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
-    <img class=" mx-auto " " src="{url}/resources/icons/filter.svg" alt="" width="16" height="16"> 
-    <span class="visually-hidden">Filtrowanie</span>
-</button>
+</div>   
+
+{*    Delete thread
+    <button class="btn btn-primary  border-primary-subtle rounded-pill" type="button" aria-controls="dodaj wątek">
+        <img class=" mx-auto " " src="{url}/resources/icons/plus.svg" alt="" width="16" height="16"> 
+        <span class="visually-hidden">Dodaj wątek</span>
+    </button>
+    
+    {url action='createThread'}/category/{$categoryData["idCategory"]}
+    *}
 
 
 {*<span class=" bg-primary rounded-circle border-primary-subtle btn " style = "width: px; height: 16px">
@@ -28,7 +49,6 @@
     <div class="text-center card card-body ju" >
         
         <form id="filter-form" onsubmit="ajaxPostForm('filter-form','{$conf->action_root}categoryFilterThreadList/{$categoryData["idCategory"]}','threadlist'); return false;">
-{*        <form action="{url action='sus23'}" method="post" >*} 
            <label for="sortBy" class = " mb-2"><h5>Sortuj Według</h5></label>
             <select name="sortBy" id="sortBy" class="form-select w-50 mx-auto " aria-label="Typ sortowania">
                 <option value="update_date" {if true }checked {/if}>Ostatnia aktywność</option>
@@ -43,10 +63,10 @@
             <br>
             <div id="sortDirection" class="btn-group" role="group" aria-label="Basic radio toggle button group">
                 
-                <input type="radio" class="btn-check " name="sortDirection" id="btnradio2MAL" autocomplete="off"    {if true}checked{/if} value="DESC">
+                <input type="radio" class="btn-check " name="sortDirection" id="btnradio2MAL" autocomplete="off"  checked value="DESC">
                 <label class="btn btn-outline-primary" for="btnradio2MAL">Malejąco</label>
                 
-                <input type="radio" class="btn-check " name="sortDirection" id="btnradio1ROS" autocomplete="off"    {if false}checked{/if}value="ASC">
+                <input type="radio" class="btn-check " name="sortDirection" id="btnradio1ROS" autocomplete="off"  value="ASC">
                 <label class="btn btn-outline-primary" for="btnradio1ROS">Rosnąco</label>
 
 
@@ -79,6 +99,7 @@
     *}
 
 {include file="components/threadlist.tpl"}
+{include file="components/paginationCategory.tpl"}
 
 
 </div>
@@ -86,23 +107,8 @@
 
 
 
-<nav class="mx-auto mt-3 align-self-end" aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>    
+
+
 
 
     
