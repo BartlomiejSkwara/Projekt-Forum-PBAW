@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-20 16:12:14
+/* Smarty version 4.3.0, created on 2023-06-22 09:50:35
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6491b3beef12b7_84747740',
+  'unifunc' => 'content_6493fd4b559fa3_56880829',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1687268363,
+      1 => 1687420233,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_6491b3beef12b7_84747740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6493fd4b559fa3_56880829 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13217849816491b3beec0f92_01128144', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19439286896493fd4b52b010_93494964', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_13217849816491b3beec0f92_01128144 extends Smarty_Internal_Block
+class Block_19439286896493fd4b52b010_93494964 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_13217849816491b3beec0f92_01128144',
+    0 => 'Block_19439286896493fd4b52b010_93494964',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -75,7 +75,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             
             
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="delete category modal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
       <div class="modal-header ">
@@ -176,7 +176,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/js/myJS/homeModalsStuff.js"><?php echo '</script'; ?>
+/js/myJS/customDeleteModal.js"><?php echo '</script'; ?>
 >
 <?php
 }

@@ -26,8 +26,11 @@ Utils::addRoute('addCategory', 'CategoryCD',['admin']);
 Utils::addRoute('addCategoryView', 'CategoryCD',['admin']);
 Utils::addRoute('category', 'Category');
 Utils::addRoute('categoryFilterThreadList', 'Category');
+Utils::addRoute('deleteThread', 'Category',['user']);
 
-//Utils::addRoute('thread', 'threadCtrl');
+Utils::addRoute('thread', 'Thread');
+Utils::addRoute('postMessage', 'Thread',['user']);
+Utils::addRoute('messageList', 'Thread');
 
 //Utils::addRoute('profile', 'profileCtrl');
 //Utils::addRoute('message', 'messageCtrl');

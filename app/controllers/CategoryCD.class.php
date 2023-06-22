@@ -135,9 +135,6 @@ class CategoryCD {
                     ]
                 );
                 
-                App::getMessages()->clear();
-                Utils::addInfoMessage("Usunięcie kategorii zakończone sukcesem :>");
-                SessionUtils::storeMessages();
                 
                 App::getRouter()->redirectTo("home");
             } catch (\PDOException $e) {

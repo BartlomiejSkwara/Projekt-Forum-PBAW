@@ -30,7 +30,7 @@
             
             
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="delete category modal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
       <div class="modal-header ">
@@ -111,5 +111,5 @@
         
     
 
-<script src="{$conf->app_url}/js/myJS/homeModalsStuff.js"></script>
+<script src="{$conf->app_url}/js/myJS/customDeleteModal.js"></script>
 {/block}

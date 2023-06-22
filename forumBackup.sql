@@ -139,7 +139,7 @@ INSERT INTO `thread` (`idthread`, `topic`, `creation_date`, `update_date`, `cate
 (32, 'Nowy sezon serialu \"Friends\"', '2023-07-05 22:13:14', '2023-07-05 22:13:14', 'filmy-i-seriale', 0, 1),
 (33, 'Wystawa rzeźby współczesnej w Tate Modern', '2023-07-06 18:55:39', '2023-07-06 18:55:39', 'muzyka-i-sztuka-itp', 0, 3),
 (34, 'Najlepsze powieści detektywistyczne', '2023-07-06 23:40:17', '2023-07-06 23:40:17', 'literatura', 0, 4),
-(35, 'Koncert Adele w Sydney Opera House', '2023-07-07 20:33:41', '2023-07-07 20:33:41', 'muzyka', 0, 5);
+(35, 'Koncert Adele w Sydney Opera House', '2023-07-07 20:33:41', '2023-07-07 20:33:41', 'muzyka', 0, 5),
 (36, 'Najlepsze miejsca na kemping', '2023-07-02 15:40:55', '2023-07-02 15:40:55', 'podroze', 0, 2),
 (37, 'Najlepsze filmy komediowe', '2023-07-02 21:17:33', '2023-07-02 21:17:33', 'filmy-i-seriale', 0, 1),
 (38, 'Nowa wystawa w Muzeum Historii Naturalnej', '2023-07-03 18:30:41', '2023-07-03 18:30:41', 'nauka-i-technologia', 0, 3),

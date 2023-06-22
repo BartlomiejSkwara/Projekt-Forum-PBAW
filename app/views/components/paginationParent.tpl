@@ -1,8 +1,8 @@
 
-<form id="pagination-form" class = "mx-auto mb-1" onsubmit="ajaxPostFormPagination('pagination-form','{$conf->action_root}{$actionURL}','threadlist'); return false;">
+<form id="pagination-form" class = "mx-auto mb-0 bg-dark " onsubmit="ajaxPostFormPagination('pagination-form','{$conf->action_root}{$actionURL}','threadlist'); return false;">
     {block name = passedParams}{/block}
-    <nav class="mx-auto mt-3  align-self-end" aria-label="Page navigation example">
-    <ul class="pagination">
+    <nav class="mx-auto mt-3 mb-0   align-self-end  " aria-label="Page navigation example">
+    <ul class="pagination mb-0">
       {if $pagData->currentPage != 0}
       <li class="page-item">
 

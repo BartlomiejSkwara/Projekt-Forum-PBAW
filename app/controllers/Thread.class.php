@@ -14,52 +14,42 @@ use app\forms\FilterParamsForm;
 use app\forms\PaginationData;
 
 /**
- * Description of Category
+ * Description of Thread
  *
  * @author Krisent
  */
-class Category {
-
-    private $categoryName;
-    private $categoryData;
-    private $threads;
+class Thread {
+    private $threadName;
+    private $threadData;
+    private $threadMessages;
     private $validator;
-    private $filterForm;
     private $paginationData;
     private $categoryID;
     private $resultsOnPage;
 
 
     public function __construct() {
-        $this->threads = array();
-        $this->categoryData = array();
-        $this->filterForm = new FilterParamsForm();
+        $this->threadMessages = array();
+        $this->threadData = array();
         $this->validator = new Validator();
         $this->paginationData = new PaginationData();
         $this->resultsOnPage = 10;
     }
 
-    private function validateCategoryView(){
-        $this->categoryName = $this->validator->validateFromCleanURL(1,
+    private function validateThreadView(){
+        $this->threadName = $this->validator->validateFromCleanURL(1,
             [ 
 
              'required' => true,
              'required_message' => 'message...',
-             'min_length' => 1,
-             'max_length' => 45,
-
-             //'regexp' => regular expression,
-            'regexp_message' => 'message...',
-            'validator_message' => 'message...',
-             //'message_type' => error | warning | info,
-
+             'number' => true,
             ]
         );
         if(!$this->validator->isLastOK())
         {
             App::getRouter()->redirectTo("home");
         }
-        $this->categoryName = urldecode($this->categoryName);
+        $this->threadName = urldecode($this->threadName);
 
         $this->paginationData->currentPage = $this->validator->validateFromPost("page",
             [ 
@@ -76,42 +66,33 @@ class Category {
     
   
 
-    private function getThreadsFromDB(){
+    private function getMessagesFromDB(){
         try {
             
-            $this->categoryData = App::getDB()->select("category", ["idCategory","name","description"], 
+            $this->threadData = App::getDB()->select("thread", ["idthread ","topic","creation_date", "update_date", "message_count"], 
             [
-                "idcategory"=>$this->categoryName,
+                "idthread"=>$this->threadName,
             ]);
             
-            if(sizeof($this->categoryData)==0)
+            if(sizeof($this->threadData)==0)
                 return false;
             
-             $this->paginationData->setTotalResultsCount(App::getDB()->count("thread", 
-            [
-                "topic[~]" => $this->filterForm->filter,
-                "category_id"=> $this->categoryName,                
-            ])
-            , $this->resultsOnPage);
+             $this->paginationData->setTotalResultsCount($this->threadData[0]["message_count"], $this->resultsOnPage);;
             
-            $this->threads = App::getDB()->select("thread", 
+            $this->threadMessages = App::getDB()->select("message", 
                     ["[>]user"=>["user_id"=>"iduser"]],
                     [
-                        "idthread",
-                        "topic",
+                        "idmessage",
                         "creation_date",
-                        "update_date",
-                        "category_id",
-                        "message_count",
+                        "content",
                         "username"
                     ],
             [
                 "ORDER" => [
-                    $this->filterForm->column => $this->filterForm->direction
+                    "creation_date" => "DESC"
                     
                 ],
-                "topic[~]" => $this->filterForm->filter,
-                "category_id"=> $this->categoryName,
+                "thread_id "=> $this->threadName,
                 "LIMIT"=>[0+$this->paginationData->currentPage* $this->resultsOnPage, $this->resultsOnPage]
                 
             ]);
@@ -123,9 +104,8 @@ class Category {
                 if (App::getConf()->debug){
                     
                     Utils::addErrorMessage($e->getMessage());
-                    $this->categoryData[0]["name"]="notFound";
-                    $this->categoryData[0]["description"]="notFound";
-                    $this->threads = [];
+                    $this->threadData[0]["topic"]="notFound";
+                    $this->threadMessages = [];
                     
                     return true;
                 }
@@ -137,58 +117,17 @@ class Category {
 
         return true;
     }
-    private function validateFilterParams(){
-                
-        
-         
-        $this->filterForm->column = $this->validator->validateFromPost("sortBy",
-            [ 
-                'regexp' => '/^(update_date|creation_date|message_count|topic)$/',
-            ]
-        );
-        if(!$this->validator->isLastSet()||!$this->validator->isLastOK())
-        {
-            $this->filterForm->column = "update_date";
-        }
-        
-        $this->filterForm->direction = $this->validator->validateFromPost("sortDirection",
-            [ 
-                'regexp' => '/^(ASC|DESC)$/',
-            ]
-        );
-        if(!$this->validator->isLastSet()||!$this->validator->isLastOK())
-        {
-            $this->filterForm->direction = "DESC";
-        }
-        
-        $this->filterForm->filter = $this->validator->validateFromPost("filter",
-            [ 
-
-                'max_length' => 45,
-                'regexp' => App::getConf()->illegalSymbolsRegex,
-                'regexp_message' => 'Filtr nie może zawierać znaków specjalnych " \' & < > ',
-                
-            ]
-        );
-        if(!$this->validator->isLastOK())
-        {
-            $this->filterForm->filter = "";
-        }
-        
-        
-
-
-    }        
-    public function action_category(){
-        $this->sharedActionCode("CategoryView.tpl");
+   
+    public function action_thread(){
+        $this->sharedActionCode("ThreadView.tpl");
     }
     
-    public function action_categoryFilterThreadList(){
-         if($this->sharedActionCode("components/threadlist.tpl")){
+    public function action_messageList(){
+         if($this->sharedActionCode("components/threadMessagesList.tpl")){
              App::getSmarty()->display("components/paginationCategory.tpl");
          }
     
-    }
+     }
     
 
     
@@ -197,25 +136,22 @@ class Category {
     
 
     private function sharedActionCode($tpl){
-        ///App::getMessages()->clear();
 
-        $this->validateCategoryView();
-        $this->validateFilterParams();
-        if($this->getThreadsFromDB())
+        $this->validateThreadView();
+        if($this->getMessagesFromDB())
         {
-            $this->paginationData->filter = $this->filterForm;
             App::getSmarty()->assign("pagData", $this->paginationData);    
             
-            App::getSmarty()->assign("title", $this->categoryData[0]["name"]);
-            App::getSmarty()->assign("categoryData", $this->categoryData[0]);
-            App::getSmarty()->assign("threads", $this->threads);
+            App::getSmarty()->assign("title", $this->threadData[0]["topic"]);
+            App::getSmarty()->assign("threadData", $this->threadData[0]);
+            App::getSmarty()->assign("threadMessages", $this->threadMessages);
             App::getSmarty()->display("components/messages.tpl");
 
             App::getSmarty()->display($tpl);
             return true;
         }
         else{
-            App::getSmarty()->assign("customError", "Nie odnaleziono kategorii<br><p class='text-primary'>".$this->categoryName."</p>");
+            App::getSmarty()->assign("customError", "Nie odnaleziono kategorii<br><p class='text-primary'>".$this->threadName."</p>");
             App::getSmarty()->display("FatalError.tpl");
             return false;
         }
@@ -280,20 +216,4 @@ class Category {
         $this->sharedActionCode("CategoryView.tpl");
     }
     
-    
-    
 }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

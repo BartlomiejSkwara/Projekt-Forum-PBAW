@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-21 14:41:04
+/* Smarty version 4.3.0, created on 2023-06-22 18:08:38
   from 'E:\XAMPP\htdocs\projekt\app\views\components\paginationParent.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6492efe0a62588_68970185',
+  'unifunc' => 'content_64947206072aa6_77201543',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a60e34ea2c988e1f0a3deb3e06b4f5b0009bfdd6' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\components\\paginationParent.tpl',
-      1 => 1687351156,
+      1 => 1687450116,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6492efe0a62588_68970185 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64947206072aa6_77201543 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 
-<form id="pagination-form" class = "mx-auto mb-1" onsubmit="ajaxPostFormPagination('pagination-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;
+<form id="pagination-form" class = "mx-auto mb-0 bg-dark " onsubmit="ajaxPostFormPagination('pagination-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;
 echo $_smarty_tpl->tpl_vars['actionURL']->value;?>
 ','threadlist'); return false;">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17264123976492efe0a35704_89006196', 'passedParams');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17483623364947206056499_44272897', 'passedParams');
 ?>
 
-    <nav class="mx-auto mt-3  align-self-end" aria-label="Page navigation example">
-    <ul class="pagination">
+    <nav class="mx-auto mt-3 mb-0   align-self-end  " aria-label="Page navigation example">
+    <ul class="pagination mb-0">
       <?php if ($_smarty_tpl->tpl_vars['pagData']->value->currentPage != 0) {?>
       <li class="page-item">
 
@@ -81,12 +81,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17264123976492efe0
 
 <?php }
 /* {block 'passedParams'} */
-class Block_17264123976492efe0a35704_89006196 extends Smarty_Internal_Block
+class Block_17483623364947206056499_44272897 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'passedParams' => 
   array (
-    0 => 'Block_17264123976492efe0a35704_89006196',
+    0 => 'Block_17483623364947206056499_44272897',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -8,8 +8,10 @@ function confirmLink(link,message) {
 	}
 }
 
-// Funkcja wysyłająca dane formularza identyfkowanego przez 'id_form', do podanego adresu 'url'.
-// Otrzymana odpowiedź zamienia zawartość elementu na stronie o identyfikatorze 'id_to_reload'.
+
+
+
+
 function ajaxPostFormPagination(id_form,url,id_to_reload)
 {
     
