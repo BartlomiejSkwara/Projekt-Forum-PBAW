@@ -33,7 +33,7 @@ class Thread {
         $this->threadData = array();
         $this->validator = new Validator();
         $this->paginationData = new PaginationData();
-        $this->resultsOnPage = 10;
+        $this->resultsOnPage = 20;
     }
 
     private function validateThreadView(){
@@ -89,7 +89,7 @@ class Thread {
                     ],
             [
                 "ORDER" => [
-                    "creation_date" => "DESC"
+                    "creation_date" => "ASC"
                     
                 ],
                 "thread_id "=> $this->threadName,
@@ -124,7 +124,9 @@ class Thread {
     
     public function action_messageList(){
          if($this->sharedActionCode("components/threadMessagesList.tpl")){
-             App::getSmarty()->display("components/paginationCategory.tpl");
+            App::getSmarty()->display("components/messagePostForm.tpl");
+
+            App::getSmarty()->display("components/paginationThread.tpl");
          }
     
      }

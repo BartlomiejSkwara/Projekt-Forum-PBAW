@@ -119,7 +119,7 @@
 
 
 
-<div id="threadlist" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
+<div id="contentList" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
 
 
 {include file="components/threadlist.tpl"}

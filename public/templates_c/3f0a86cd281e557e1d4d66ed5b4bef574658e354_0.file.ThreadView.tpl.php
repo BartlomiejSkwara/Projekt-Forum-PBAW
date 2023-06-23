@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-22 18:17:31
+/* Smarty version 4.3.0, created on 2023-06-23 21:41:37
   from 'E:\XAMPP\htdocs\projekt\app\views\ThreadView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6494741b3a7c58_21869032',
+  'unifunc' => 'content_6495f5718a8f38_67504362',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f0a86cd281e557e1d4d66ed5b4bef574658e354' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\ThreadView.tpl',
-      1 => 1687450641,
+      1 => 1687549296,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:components/messages.tpl' => 1,
     'file:components/threadMessagesList.tpl' => 1,
+    'file:components/messagePostForm.tpl' => 1,
     'file:components/paginationThread.tpl' => 1,
   ),
 ),false)) {
-function content_6494741b3a7c58_21869032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6495f5718a8f38_67504362 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10856642276494741b389704_50523903', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16430028816495f571896c23_02439946', "main");
 ?>
 
 
@@ -38,12 +39,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10856642276494741b
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "main"} */
-class Block_10856642276494741b389704_50523903 extends Smarty_Internal_Block
+class Block_16430028816495f571896c23_02439946 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_10856642276494741b389704_50523903',
+    0 => 'Block_16430028816495f571896c23_02439946',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -78,30 +79,21 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 
-<div id="threadlist" class="border-top border-white mt-2 w-90 mx-auto bg-body-tertiary pb-0">
+<div id="contentList" class=" list-group   list-group-flush  border-top border-white mt-2 w-90  mx-auto  pb-0">
 
 <?php $_smarty_tpl->_subTemplateRender("file:components/threadMessagesList.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php $_smarty_tpl->_subTemplateRender("file:components/messagePostForm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
-<?php if (\core\SessionUtils::load("username",true)) {?>
-<form>
-    <div class="mb-3">
-            <label for="threadName" class="form-label">Thread Name</label>
-            <input type="text" class="form-control" id="threadName" maxlength="45" placeholder="Enter thread name" required>
-            <div id="threadNameHelp" class="form-text">Maximum 45 characters.</div>
-    </div>
-    <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" maxlength="180" placeholder="Enter your message" required></textarea>
-        <div id="messageHelp" class="form-text">Maximum 180 characters.</div>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<?php }?>
 
+
+<div class=" mx-auto">
 <?php $_smarty_tpl->_subTemplateRender("file:components/paginationThread.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+</div>
+
 
 </div>
 

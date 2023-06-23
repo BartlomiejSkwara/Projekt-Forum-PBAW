@@ -12,7 +12,7 @@ use core\SessionUtils;
 use core\Utils;
 use app\forms\FilterParamsForm;
 use app\forms\PaginationData;
-
+use core\RoleUtils;
 /**
  * Description of Category
  *
@@ -28,7 +28,7 @@ class Category {
     private $paginationData;
     private $categoryID;
     private $resultsOnPage;
-
+    private $deleteThreadId;
 
     public function __construct() {
         $this->threads = array();
@@ -239,7 +239,7 @@ class Category {
 
     private function validateDeleteThread(){
         $validator = new Validator();
-        $this->categoryID = $validator->validateFromCleanURL(2,
+        $this->deleteThreadId = $validator->validateFromCleanURL(2,
             [ 
             'required' => true , 
             'numeric' => true,  
@@ -254,13 +254,21 @@ class Category {
         if($this->validateDeleteThread()){
             try{
                 
-                App::getDB()->delete("thread",  
-                    [
-                        "idthread " => $this->categoryID,
-                    ]
-                );
+                $user = App::getDB()->select("thread",
+                ["[>]user"=>["user_id"=>"iduser"]],
+                ["username"],
+                [
+                   "idthread"=> $this->deleteThreadId 
+                ]);
                 
-                
+                if (SessionUtils::load("username",true)==$user || RoleUtils::inRole("admin"))
+                {
+                    App::getDB()->delete("thread",  
+                        [
+                            "idthread " => $this->deleteThreadId,
+                        ]
+                    );
+                }
                 $this->sharedActionCode("CategoryView.tpl");
                 return;
                 

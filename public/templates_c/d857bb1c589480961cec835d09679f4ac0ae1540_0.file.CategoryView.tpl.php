@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-22 12:40:21
+/* Smarty version 4.3.0, created on 2023-06-23 20:47:59
   from 'E:\XAMPP\htdocs\projekt\app\views\CategoryView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649425157bb9b1_92065975',
+  'unifunc' => 'content_6495e8df85a708_11874037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd857bb1c589480961cec835d09679f4ac0ae1540' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\CategoryView.tpl',
-      1 => 1687430266,
+      1 => 1687546071,
       2 => 'file',
     ),
   ),
@@ -23,13 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/paginationCategory.tpl' => 1,
   ),
 ),false)) {
-function content_649425157bb9b1_92065975 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6495e8df85a708_11874037 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16624170076494251579d131_79931985', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14139790836495e8df82b000_95276861', "main");
 ?>
 
 
@@ -37,12 +37,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_166241700764942515
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "main"} */
-class Block_16624170076494251579d131_79931985 extends Smarty_Internal_Block
+class Block_14139790836495e8df82b000_95276861 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_16624170076494251579d131_79931985',
+    0 => 'Block_14139790836495e8df82b000_95276861',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -168,7 +168,7 @@ categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->valu
 
 
 
-<div id="threadlist" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
+<div id="contentList" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
 
 
 <?php $_smarty_tpl->_subTemplateRender("file:components/threadlist.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
