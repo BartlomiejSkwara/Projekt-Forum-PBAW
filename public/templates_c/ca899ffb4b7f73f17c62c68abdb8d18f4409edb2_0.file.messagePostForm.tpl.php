@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-23 21:48:54
+/* Smarty version 4.3.0, created on 2023-06-25 12:49:14
   from 'E:\XAMPP\htdocs\projekt\app\views\components\messagePostForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6495f7261298e0_81138256',
+  'unifunc' => 'content_64981baab09fb0_07619192',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca899ffb4b7f73f17c62c68abdb8d18f4409edb2' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\components\\messagePostForm.tpl',
-      1 => 1687549732,
+      1 => 1687690152,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6495f7261298e0_81138256 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64981baab09fb0_07619192 (Smarty_Internal_Template $_smarty_tpl) {
 if (\core\SessionUtils::load("username",true)) {?>
-<form class = "mx-auto text-center  w-90 border p-2 mt-2 mb-0">
+<form id = "messagePostFormA" class = "mx-auto text-center  w-90 border p-2 mt-2 mb-0" onsubmit="ajaxPostFormPagination('messagePostFormA','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+postMessage/<?php echo $_smarty_tpl->tpl_vars['threadData']->value["idthread"];?>
+','contentList'); return false;">
 
     <div class="mx-auto w-75">
             <label for="message" class="form-label">Wyślij Wiadomość</label>
-            <textarea class="form-control no-scroll " id="message" rows="3" maxlength="180" placeholder="Enter your message" required></textarea>
+            <textarea class="form-control no-scroll " name="message" id="message" rows="3" maxlength="180" placeholder="Enter your message" ></textarea>
         <div id="messageHelp" class="form-text">Maksymalnie 180 znaków</div>
     </div>
-    <button type="submit" class="btn btn-primary">Wyślij</button>
+    <button type="submit" class="btn btn-primary"  value="<?php echo $_smarty_tpl->tpl_vars['pagData']->value->lastPage;?>
+" >Wyślij</button>
 </form>
 <?php }?>
 

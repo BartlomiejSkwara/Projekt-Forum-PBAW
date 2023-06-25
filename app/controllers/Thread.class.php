@@ -26,6 +26,7 @@ class Thread {
     private $paginationData;
     private $categoryID;
     private $resultsOnPage;
+    private $message;
 
 
     public function __construct() {
@@ -77,7 +78,7 @@ class Thread {
             if(sizeof($this->threadData)==0)
                 return false;
             
-             $this->paginationData->setTotalResultsCount($this->threadData[0]["message_count"], $this->resultsOnPage);;
+            $this->paginationData->setTotalResultsCount($this->threadData[0]["message_count"], $this->resultsOnPage);
             
             $this->threadMessages = App::getDB()->select("message", 
                     ["[>]user"=>["user_id"=>"iduser"]],
@@ -119,15 +120,17 @@ class Thread {
     }
    
     public function action_thread(){
+        $this->validateThreadView();
         $this->sharedActionCode("ThreadView.tpl");
     }
     
     public function action_messageList(){
-         if($this->sharedActionCode("components/threadMessagesList.tpl")){
+        $this->validateThreadView();
+        if($this->sharedActionCode("components/threadMessagesList.tpl")){
             App::getSmarty()->display("components/messagePostForm.tpl");
 
             App::getSmarty()->display("components/paginationThread.tpl");
-         }
+        }
     
      }
     
@@ -139,7 +142,6 @@ class Thread {
 
     private function sharedActionCode($tpl){
 
-        $this->validateThreadView();
         if($this->getMessagesFromDB())
         {
             App::getSmarty()->assign("pagData", $this->paginationData);    
@@ -214,8 +216,85 @@ class Thread {
             }
             
             
-        }        
+        }
+        $this->validateThreadView();
         $this->sharedActionCode("CategoryView.tpl");
     }
     
+
+    private function validatePostedMessage(){
+        $this->message = $this->validator->validateFromPost(
+            "message",
+            [
+                'trim' => true,
+                'required' => true ,
+                'required_message' => 'Nie podałeś wiadomości do wysłania :<', 
+                'min_length' => 1,
+                'max_length' => 180,
+                'validator_message' => 'Wiadomość musi mieć między 1 a 180 znaków',
+                'regexp' => App::getConf()->illegalSymbolsRegex,
+                
+                'regexp_message' => 'Wiadomość zawiera jeden z zakazanych znaków " \' & < > ',
+            ]
+        );
+        
+        return $this->validator->isLastOK();
+    }
+    private function sendMessageToDB(){
+        try {
+            $msgCnt = App::getDB()->select("thread", ["message_count"],
+                    [
+                        "idthread"=> $this->threadName
+                    ]
+            );
+
+            App::getDB()->update("thread", 
+                    [
+                        "message_count[+]"=>1
+                    ],
+                    [
+                        "idthread"=> $this->threadName
+                    ]
+            );
+
+
+            App::getDB()->insert("message",
+                [
+                "content"=> $this->message,
+                "thread_id" => $this->threadName,
+                "user_id"  => \core\SessionUtils::load("userID",true),
+                "creation_date" => date("Y-m-d H:i:s")
+                ]
+            );
+
+            return true;
+
+
+
+        } catch (\PDOException $e) {
+
+            if (App::getConf()->debug){
+                Utils::addErrorMessage($e->getMessage());
+                return false;
+
+            }
+            else
+                App::getRouter()->redirectTo("fatalError");
+
+        }
+    }
+    public function action_postMessage() {
+        
+        $this->validateThreadView();
+
+        if( $this->validatePostedMessage() ){
+            $this->sendMessageToDB();
+        }
+        
+        if($this->sharedActionCode("components/threadMessagesList.tpl")){
+            App::getSmarty()->display("components/messagePostForm.tpl");
+            App::getSmarty()->display("components/paginationThread.tpl");
+        }
+    }
 }
+

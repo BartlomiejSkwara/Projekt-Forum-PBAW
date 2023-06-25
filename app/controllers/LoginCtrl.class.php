@@ -54,7 +54,7 @@ class LoginCtrl {
         if($bothParamsAreOk){
             
             try {
-                $record = App::getDB()->select("user",["username","password","role"],
+                $record = App::getDB()->select("user",["username","password","role","iduser"],
                 [
                     "AND"=>[
                         "username"=> $this->form->login,
@@ -78,6 +78,7 @@ class LoginCtrl {
             RoleUtils::addRole("user");
             
             SessionUtils::store("username", $record[0]["username"]);
+            SessionUtils::store("userID", $record[0]["iduser"]);
             if ($record[0]["role"] == "admin"){
                 RoleUtils::addRole("admin");
             }

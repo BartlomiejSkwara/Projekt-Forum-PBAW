@@ -124,8 +124,19 @@ class RegisterCtrl {
                 );
                 
                 
+                $record = App::getDB()->select("user",["iduser"],
+                [
+                    "AND"=>[
+                        "username"=> $this->form->login,
+                        "password"=> $this->form->password
+                    ]
+                ]
+                );
+                
+                
                 //App::
                 RoleUtils::addRole("user");
+                SessionUtils::store("userID", $record[0]["iduser"]);
 
                 SessionUtils::store("username", $this->form->login);
 
