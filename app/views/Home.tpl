@@ -7,17 +7,17 @@
 
 <div class="px-4 py-5 mx-auto  my-5 text-center">
   <img class="d-block  mx-auto mb-4" src="{url}/resources/yuumsideview.svg" alt="" width="72" height="57">
-  <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+  <h1 class="display-5 fw-bold text-body-emphasis">Forum</h1>
   <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae diam aliquet, convallis nunc id, tincidunt urna. 
-          Duis tempor justo nisl, sed feugiat massa suscipit at. Etiam non placerat nulla. Aliquam euismod odio vitae est imperdiet facilisis. 
-          Proin sollicitudin metus in neque semper, et consequat ipsum consequat. Ut nec pellentesque leo. Quisque aliquet turpis quis metus pretium venenatis. 
-          Aliquam cursus justo sapien, vitae laoreet augue tincidunt quis. Vivamus massa est, accumsan in ipsum sit amet, finibus elementum justo. 
+          
+        Witamy na forum! To miejsce, gdzie możesz dyskutować z różnymi osobami na tematy, które Was interesują. 
+        Jednak pamiętaj, że ważne jest zachowanie kultury i nieprzesadzanie z nieuprzejmościami. 
+        Bądź uprzejmy i szanuj innych uczestników rozmów. :>
       </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+      {*<button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>*}
     </div>
   </div>
 </div>

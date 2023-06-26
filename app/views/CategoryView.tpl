@@ -28,10 +28,10 @@
         <span class="visually-hidden">Filtrowanie</span>
     </button>
     {if \core\RoleUtils::inRole("user")}
-    <button class="btn btn-primary border-primary-subtle  rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#adding" aria-expanded="false" aria-controls="collapseFilter">
+    <a class="btn btn-primary border-primary-subtle  rounded-pill" type="button" href="{url action='addThreadView'}/{$categoryData["idCategory"]}">
         <img class=" mx-auto " " src="{url}/resources/icons/plus.svg" alt="" width="16" height="16"> 
-        <span class="visually-hidden">Filtrowanie</span>
-    </button>
+        <span class="visually-hidden">Dodaj kategorię</span>
+    </a>
 {*        <a class="btn btn-primary border-primary-subtle  rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false">
             <span class="btn btn-primary border-primary-subtle  rounded-pill">
                 <img class=" mx-auto " " src="{url}/resources/icons/plus.svg" alt="" width="16" height="16" style="fill: red;"> 
@@ -70,12 +70,6 @@
     
 
 
-<div class="collapse" id="adding">
-    <div class="text-center card card-body ju" >
-
-    123
-    </div>
-</div>
 
 
   <div class="collapse" id="collapseFilter">

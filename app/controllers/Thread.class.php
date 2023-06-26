@@ -135,11 +135,6 @@ class Thread {
      }
     
 
-    
-    
-    
-    
-
     private function sharedActionCode($tpl){
 
         if($this->getMessagesFromDB())
@@ -163,18 +158,7 @@ class Thread {
 
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-        
 
-    
-    
 
 
     private function validateDeleteThread(){
@@ -250,7 +234,8 @@ class Thread {
 
             App::getDB()->update("thread", 
                     [
-                        "message_count[+]"=>1
+                        "message_count[+]"=>1,
+                        "update_date"=>date("Y-m-d H:i:s")
                     ],
                     [
                         "idthread"=> $this->threadName
@@ -296,5 +281,9 @@ class Thread {
             App::getSmarty()->display("components/paginationThread.tpl");
         }
     }
+
+
+    
 }
+
 

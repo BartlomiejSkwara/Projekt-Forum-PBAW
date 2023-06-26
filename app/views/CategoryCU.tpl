@@ -8,14 +8,14 @@
         <div class= "text-center mx-auto mt-auto dark">
           <form action="{strip}
                 
-                {url action=$selectedAction}
-                {if $selectedAction == "editCategory"}
-                    /{$editedID}
-                {/if}
-                
-                {/strip}" method="post" >
-           
-                    <h1 class="h3 mb-5 fw-normal display-5">{$title}<br><b class="text-primary">{if isset($editedID)}{$editedID}{/if}</b></h1>
+            {url action=$selectedAction}
+            {if $selectedAction == "editCategory"}
+                /{$editedID}
+            {/if}
+
+            {/strip}" method="post" >
+
+                <h1 class="h3 mb-5 fw-normal display-5">{$title}<br><b class="text-primary">{if isset($editedID)}{$editedID}{/if}</b></h1>
 
             <div class="mx-auto mb-3 " style="width: 21rem;">
               <label for="categoryName" class="form-label">Nazwa Kategorii</label>

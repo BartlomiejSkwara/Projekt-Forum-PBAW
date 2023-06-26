@@ -1,4 +1,6 @@
 
+
+
 {if \core\SessionUtils::load("username",true)}
 <form id = "messagePostFormA" class = "mx-auto text-center  w-90 border p-2 mt-2 mb-0" onsubmit="ajaxPostFormPagination('messagePostFormA','{$conf->action_root}postMessage/{$threadData["idthread"]}','contentList'); return false;">
 
@@ -13,8 +15,3 @@
 
 
 
-{*    <div class="mb-3">
-            <label for="threadName" class="form-label">Thread Name</label>
-            <input type="text" class="form-control" id="threadName" maxlength="45" placeholder="Enter thread name" required>
-            <div id="threadNameHelp" class="form-text">Maximum 45 characters.</div>
-    </div>*}

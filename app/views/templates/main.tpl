@@ -32,7 +32,8 @@
         
         <script src="{$conf->app_url}/js/bootstrap.bundle.min.js"></script>
     
-     
+        <script src="{$conf->app_url}/js/myJS/functions.js"></script>
+
     </body>
 </html>
 
