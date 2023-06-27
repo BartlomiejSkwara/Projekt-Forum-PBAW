@@ -1,10 +1,10 @@
-<div class="container mt-4 bg-body-tertiary">
+<div class="container mt-4 bg-body-tertiary py-3">
   {foreach $threadMessages as $threadMessage}
     <div class="row mb-4">
         <div class="{if \core\SessionUtils::load("username",true)==$threadMessage["username"]}col-10  offset-2 {else}col-10 {/if}">
-            <div class="px-0 py-0 row shadow-lg rounded-end p-3 d-flex text-break border border
+            <div class="px-0 py-0 row shadow-lg rounded-end p-3 d-flex text-break border  {if \core\SessionUtils::load("username",true)==$threadMessage["username"]}border-activeUser{/if}
                  {if \core\SessionUtils::load("username",true)==$threadMessage["username"]}border-end-0{else}border-start-0{/if}">
-                <div id="top" class="bg-light-subtle col-12 col-lg-2 text-center d-lg-block d-flex align-items-center">
+                <div id="top" class=" {if \core\SessionUtils::load("username",true)==$threadMessage["username"]}bg-activeUser{else}bg-light-subtle{/if}  col-12 col-lg-2 text-center d-lg-block d-flex align-items-center">
                     <img class=" d-lg-block d-none mx-auto img-thumbnail mt-1" src="{url}/resources/icons/person-fill.svg" alt="" width="64" height="64"></img>
                     <img class="d-lg-none  d-inline" src="{url}/resources/icons/person-fill.svg" alt="" width="32" height="32"></img>
 

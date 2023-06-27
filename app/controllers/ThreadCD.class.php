@@ -10,6 +10,7 @@ namespace app\controllers;
 use core\App;
 use core\Validator;
 use core\Utils;
+use core\SessionUtils;
 /**
  * Description of ThreadCD
  *
@@ -182,12 +183,18 @@ class ThreadCD {
                     Utils::addErrorMessage($e->getMessage());
 
                 }
-                else
+                else{
                     App::getRouter()->redirectTo("fatalError");
+                    return;
+                }
+                    
             }
             App::getRouter()->redirectTo("thread/". $this->threadID);
         }else{
-            App::getSmarty()->display("components/messages.tpl");
+            App::getSmarty()->assign("title","Dodaj Wątek");
+            App::getSmarty()->assign("categoryID",  $this->categoryID);
+
+            App::getSmarty()->display("ThreadCreator.tpl");
         }
     }
 }

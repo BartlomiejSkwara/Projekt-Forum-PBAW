@@ -121,14 +121,15 @@ class Thread {
    
     public function action_thread(){
         $this->validateThreadView();
-        $this->sharedActionCode("ThreadView.tpl");
+        $this->sharedActionCode("ThreadView.tpl",true);
     }
     
     public function action_messageList(){
         $this->validateThreadView();
         if($this->sharedActionCode("components/threadMessagesList.tpl")){
-            App::getSmarty()->display("components/messagePostForm.tpl");
+            App::getSmarty()->display("components/messages.tpl");
 
+            App::getSmarty()->display("components/messagePostForm.tpl");
             App::getSmarty()->display("components/paginationThread.tpl");
         }
     
@@ -139,14 +140,17 @@ class Thread {
 
         if($this->getMessagesFromDB())
         {
+           
             App::getSmarty()->assign("pagData", $this->paginationData);    
             
             App::getSmarty()->assign("title", $this->threadData[0]["topic"]);
             App::getSmarty()->assign("threadData", $this->threadData[0]);
             App::getSmarty()->assign("threadMessages", $this->threadMessages);
-            App::getSmarty()->display("components/messages.tpl");
+            
+            
 
             App::getSmarty()->display($tpl);
+
             return true;
         }
         else{
@@ -277,6 +281,7 @@ class Thread {
         }
         
         if($this->sharedActionCode("components/threadMessagesList.tpl")){
+            App::getSmarty()->display("components/messages.tpl");
             App::getSmarty()->display("components/messagePostForm.tpl");
             App::getSmarty()->display("components/paginationThread.tpl");
         }

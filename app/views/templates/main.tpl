@@ -14,7 +14,7 @@
         
         {if $onlyBody|default: true == true}
             {include file="header.tpl"}
-            <div class = "d-flex pt-5 mt-5 mx-auto   w-75 flex-column main-content">
+        <div class = "d-flex pt-5 mt-5 mx-auto col-12 col-sm-9 flex-column main-content">
         {/if}
             
         
@@ -25,7 +25,7 @@
         
         
         {if $onlyBody|default: true == true}
-            </div>
+        </div>
             {include file="footer.tpl"}
         {/if}
         

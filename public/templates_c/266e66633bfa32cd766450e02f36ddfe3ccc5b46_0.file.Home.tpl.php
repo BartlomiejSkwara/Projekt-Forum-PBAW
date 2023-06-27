@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-26 18:19:36
+/* Smarty version 4.3.0, created on 2023-06-27 10:48:56
   from 'E:\XAMPP\htdocs\projekt\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6499ba989006d2_35860266',
+  'unifunc' => 'content_649aa2782d6818_21351702',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '266e66633bfa32cd766450e02f36ddfe3ccc5b46' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\Home.tpl',
-      1 => 1687794349,
+      1 => 1687855721,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/messages.tpl' => 1,
   ),
 ),false)) {
-function content_6499ba989006d2_35860266 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649aa2782d6818_21351702 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php $_smarty_tpl->_assignInScope('title', "Categories");
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11818560956499ba988908b0_01025049', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1384293234649aa27829ddd8_61832506', "main");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates\main.tpl");
 }
 /* {block "main"} */
-class Block_11818560956499ba988908b0_01025049 extends Smarty_Internal_Block
+class Block_1384293234649aa27829ddd8_61832506 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_11818560956499ba988908b0_01025049',
+    0 => 'Block_1384293234649aa27829ddd8_61832506',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,23 +48,23 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   
 
 
-<div class="px-4 py-5 mx-auto  my-5 text-center">
+<div class="mx-auto  mb-5 text-center flex-grow-1">
   <img class="d-block  mx-auto mb-4" src="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array(),$_smarty_tpl ) );?>
 /resources/yuumsideview.svg" alt="" width="72" height="57">
   <h1 class="display-5 fw-bold text-body-emphasis">Forum</h1>
   <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">
+      <p class="lead mb-4 w-100">
           
-        Witamy na forum! To miejsce, gdzie możesz dyskutować z różnymi osobami na tematy, które Was interesują. 
-        Jednak pamiętaj, że ważne jest zachowanie kultury i nieprzesadzanie z nieuprzejmościami. 
-        Bądź uprzejmy i szanuj innych uczestników rozmów. :>
+        Witamy na forum! To miejsce, gdzie możesz dyskutować z różnymi osobami na tematy, które Was interesują.<br> 
+        Jednak pamiętaj, że ważne jest zachowanie kultury i nieprzesadzanie z nieuprzejmościami. <br>
+        Bądź uprzejmy i szanuj innych uczestników rozmów. :><br>
       </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           </div>
   </div>
 </div>
         
-<div class= "text-center mb-auto  mx-auto dark ">
+<div class= "text-center mb-auto flex-shrink-1  mx-auto dark ">
     <?php $_smarty_tpl->_subTemplateRender("file:components/messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>  
 </div>    
@@ -98,8 +98,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 
-                <div class= "text-center mx-auto mt-5 dark ">
-            <div class ="d-flex flex-wrap justify-content-center container">
+                <div class= "text-center flex-grow-1 mx-auto  dark ">
+            <div class ="d-flex flex-wrap justify-content-center container  p-0">
             
 
                 

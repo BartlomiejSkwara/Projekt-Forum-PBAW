@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-26 20:16:27
+/* Smarty version 4.3.0, created on 2023-06-27 15:18:15
   from 'E:\XAMPP\htdocs\projekt\app\views\CategoryView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6499d5fb98d8b9_20008314',
+  'unifunc' => 'content_649ae197389f23_80227571',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd857bb1c589480961cec835d09679f4ac0ae1540' => 
     array (
       0 => 'E:\\XAMPP\\htdocs\\projekt\\app\\views\\CategoryView.tpl',
-      1 => 1687803261,
+      1 => 1687871894,
       2 => 'file',
     ),
   ),
@@ -23,13 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:components/paginationCategory.tpl' => 1,
   ),
 ),false)) {
-function content_6499d5fb98d8b9_20008314 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649ae197389f23_80227571 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14393841666499d5fb968769_75750558', "main");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2048118087649ae197367062_74777474', "main");
 ?>
 
 
@@ -37,12 +37,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14393841666499d5fb
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "main"} */
-class Block_14393841666499d5fb968769_75750558 extends Smarty_Internal_Block
+class Block_2048118087649ae197367062_74777474 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_14393841666499d5fb968769_75750558',
+    0 => 'Block_2048118087649ae197367062_74777474',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -126,7 +126,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         
         <form id="filter-form" onsubmit="ajaxPostForm('filter-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->value["idCategory"];?>
-','threadlist'); return false;">
+','contentList'); return false;">
            <label for="sortBy" class = " mb-2"><h5>Sortuj Według</h5></label>
             <select name="sortBy" id="sortBy" class="form-select w-50 mx-auto " aria-label="Typ sortowania">
                 <option value="update_date" checked >Ostatnia aktywność</option>
@@ -164,7 +164,7 @@ categoryFilterThreadList/<?php echo $_smarty_tpl->tpl_vars['categoryData']->valu
 
 
 
-<div id="contentList" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
+<div id="contentList" class="list-group list-group-flush border-top mt-2 w-90 mx-auto">
 
 
 <?php $_smarty_tpl->_subTemplateRender("file:components/threadlist.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

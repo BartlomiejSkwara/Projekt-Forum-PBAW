@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-black border-bottom " style="border-bottom: 2px var(--bs-border-style) grey !important">
+<nav class="navbar navbar-expand-sm fixed-top bg-black border-bottom " style="border-bottom: 2px var(--bs-border-style) grey !important">
   <div class="container-fluid">
     <a class="navbar-brand" href="{url action='home'}">
         <img src="{url}/resources/yuumbread.svg" class="image-flip" width="59" height="33" class="me-3" alt="">
@@ -13,18 +13,18 @@
         \core\RoleUtils::inRole("admin");*}
       
       <ul class="navbar-nav ms-auto mb-2 mb-md-0 navbar-nav-scroll">
-        <li class="nav-item">
+    {*    <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Kategorie</a>
-        </li>
+        </li>*}
         
-        <li class="nav-item">
+{*        <li class="nav-item">
           <a class="nav-link" href="#">#</a>
         </li><li class="nav-item">
           <a class="nav-link" href="#">#</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">#</a>
-        </li>
+        </li>*}
         {if \core\RoleUtils::inRole("user")}
             <li class="nav-item">
                 <a class="nav-link " href="">{\core\SessionUtils::load("username",true)}</a>

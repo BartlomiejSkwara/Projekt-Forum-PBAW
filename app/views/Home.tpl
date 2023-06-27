@@ -5,15 +5,15 @@
   
 
 
-<div class="px-4 py-5 mx-auto  my-5 text-center">
+<div class="mx-auto  mb-5 text-center flex-grow-1">
   <img class="d-block  mx-auto mb-4" src="{url}/resources/yuumsideview.svg" alt="" width="72" height="57">
   <h1 class="display-5 fw-bold text-body-emphasis">Forum</h1>
   <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">
+      <p class="lead mb-4 w-100">
           
-        Witamy na forum! To miejsce, gdzie możesz dyskutować z różnymi osobami na tematy, które Was interesują. 
-        Jednak pamiętaj, że ważne jest zachowanie kultury i nieprzesadzanie z nieuprzejmościami. 
-        Bądź uprzejmy i szanuj innych uczestników rozmów. :>
+        Witamy na forum! To miejsce, gdzie możesz dyskutować z różnymi osobami na tematy, które Was interesują.<br> 
+        Jednak pamiętaj, że ważne jest zachowanie kultury i nieprzesadzanie z nieuprzejmościami. <br>
+        Bądź uprzejmy i szanuj innych uczestników rozmów. :><br>
       </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       {*<button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
@@ -22,7 +22,7 @@
   </div>
 </div>
         
-<div class= "text-center mb-auto  mx-auto dark ">
+<div class= "text-center mb-auto flex-shrink-1  mx-auto dark ">
     {include file="components/messages.tpl"}  
 </div>    
         
@@ -56,8 +56,8 @@
 
 
         {*Display all of the categories taken from db*}
-        <div class= "text-center mx-auto mt-5 dark ">
-            <div class ="d-flex flex-wrap justify-content-center container">
+        <div class= "text-center flex-grow-1 mx-auto  dark ">
+            <div class ="d-flex flex-wrap justify-content-center container  p-0">
             
 
                 

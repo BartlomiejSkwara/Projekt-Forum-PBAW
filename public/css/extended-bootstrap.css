@@ -48,6 +48,13 @@ body {
     left: 95%!important;
 }
 
+.top-20 {
+    top: 20%!important;
+}
+
+.top-10 {
+    top: 10%!important;
+}
 .top-90 {
     top: 90%!important;
 }
@@ -109,4 +116,14 @@ body {
 .border-custom:hover{
     --bs-border-opacity: 1;
     border-color: rgba(var(--bs-white-rgb),var(--bs-border-opacity))!important;
+}
+
+
+.bg-activeUser {
+    --bs-bg-opacity: 1;
+    background-color: rgb(50,58,67)!important;
+}
+.border-activeUser {
+    --bs-border-opacity: 1;
+    border-color: rgb(180,180,180)!important;
 }

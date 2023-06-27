@@ -1,7 +1,6 @@
 
 {extends file = "templates/main.tpl"}
 {block name = "main"}
-{include file="components/messages.tpl"}
 
 
 
@@ -31,11 +30,11 @@
 
 <div id="contentList" class=" list-group   list-group-flush  border-top border-white mt-2 col-lg-9 col-12 mx-auto  pb-0">
 
-{include file="components/messages.tpl"}  
+ 
 
     
 {include file="components/threadMessagesList.tpl"}
-
+{include file="components/messages.tpl"} 
 {include file="components/messagePostForm.tpl"}
 
 

@@ -75,7 +75,7 @@
   <div class="collapse" id="collapseFilter">
     <div class="text-center card card-body ju" >
         
-        <form id="filter-form" onsubmit="ajaxPostForm('filter-form','{$conf->action_root}categoryFilterThreadList/{$categoryData["idCategory"]}','threadlist'); return false;">
+        <form id="filter-form" onsubmit="ajaxPostForm('filter-form','{$conf->action_root}categoryFilterThreadList/{$categoryData["idCategory"]}','contentList'); return false;">
            <label for="sortBy" class = " mb-2"><h5>Sortuj Według</h5></label>
             <select name="sortBy" id="sortBy" class="form-select w-50 mx-auto " aria-label="Typ sortowania">
                 <option value="update_date" checked >Ostatnia aktywność</option>
@@ -113,7 +113,7 @@
 
 
 
-<div id="contentList" class="list-group list-group-flush border-bottom border-top mt-2 w-90 mx-auto">
+<div id="contentList" class="list-group list-group-flush border-top mt-2 w-90 mx-auto">
 
 
 {include file="components/threadlist.tpl"}
